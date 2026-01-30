@@ -1,0 +1,292 @@
+"","query_id","dict_id","match_type","company_name_dict","turnover","company_name_orig","true_orbis_id","LLM_decision","LLM_reason","LLM_incorrect"
+"1",79,79,"Perfect","AutoBase IGFG AG",747432668,"AutoBase IGFG Deutschland",79,NA,NA,NA
+"2",200,200,"Perfect","AutoLine OADO GmbH",862658529,"AutoLine OADO & Co KG",200,NA,NA,NA
+"3",442,442,"Perfect","AutoMat IWRZ GmbH",600796499,"AutoMat IWRZ & Co KG",442,NA,NA,NA
+"4",182,182,"Perfect","AutoMat OTKD KG",89141415,"AutoMat OTKD Group",182,NA,NA,NA
+"5",365,365,"Perfect","AutoMat XUEZ GmbH",148132008,"AutoMat XUEZ",365,NA,NA,NA
+"6",322,322,"Perfect","AutoNet FUJA AG",705250253,"AutoNet FUJA Group",322,NA,NA,NA
+"7",220,220,"Perfect","AutoNet FZYF KG",154846755,"AutoNet FZYF Group",220,NA,NA,NA
+"8",105,105,"Perfect","AutoSol PGRY KG",696602894,"AutoSol PGRY",105,NA,NA,NA
+"9",28,28,"Perfect","AutoTrust OJOX GmbH",353145618,"AutoTrust OJOX",28,NA,NA,NA
+"10",452,452,"Perfect","AutoTrust VQLU KG",749501081,"AutoTrust VQLU Deutschland",452,NA,NA,NA
+"11",164,164,"Perfect","BauLine JUZM AG",205043695,"BauLine JUZM & Co KG",164,NA,NA,NA
+"12",382,382,"Perfect","BauMat SCUL SE",176986024,"BauMat SCUL Group",382,NA,NA,NA
+"13",468,468,"Perfect","BauMat YOHS KG",92697352,"BauMat YOHS & Co KG",468,NA,NA,NA
+"14",119,119,"Perfect","BauNova JKIT SE",978441315,"BauNova JKIT Deutschland",119,NA,NA,NA
+"15",39,39,"Perfect","BauTrust HCZM KG",880411412,"BauTrust HCZM",39,NA,NA,NA
+"16",127,127,"Perfect","BauVenture VCGU SE",601937455,"BauVenture VCGU",127,NA,NA,NA
+"17",86,86,"Perfect","BauWork DWVB KG",686902080,"BauWork DWVB Deutschland",86,NA,NA,NA
+"18",229,229,"Perfect","BioBase RPRG SE",907136955,"BioBase RPRG Group",229,NA,NA,NA
+"19",249,249,"Perfect","BioMat AUFR GmbH",692119719,"BioMat AUFR",249,NA,NA,NA
+"20",166,166,"Perfect","BioMat CPTN KG",449750268,"BioMat CPTN",166,NA,NA,NA
+"21",35,35,"Perfect","BioNet JMBE KG",845462219,"BioNet JMBE & Co KG",35,NA,NA,NA
+"22",213,213,"Perfect","BioNet SLKQ AG",834942617,"BioNet SLKQ Deutschland",213,NA,NA,NA
+"23",218,218,"Perfect","BioNova LOOG AG",179466332,"BioNova LOOG & Co KG",218,NA,NA,NA
+"24",120,120,"Perfect","BioNova URRK SE",58183863,"BioNova URRK & Co KG",120,NA,NA,NA
+"25",143,143,"Perfect","BioNova YLSE SE",390734631,"BioNova YLSE",143,NA,NA,NA
+"26",210,210,"Perfect","BioSol FVAE GmbH",958650722,"BioSol FVAE & Co KG",210,NA,NA,NA
+"27",148,148,"Perfect","BioSol MDOG SE",912302290,"BioSol MDOG",148,NA,NA,NA
+"28",366,366,"Perfect","BioSol VTVK SE",34396711,"BioSol VTVK",366,NA,NA,NA
+"29",473,473,"Perfect","BioTrust CCYI AG",739172613,"BioTrust CCYI",473,NA,NA,NA
+"30",476,476,"Perfect","BioTrust NOGO AG",799405160,"BioTrust NOGO & Co KG",476,NA,NA,NA
+"31",466,466,"Perfect","BioVenture TODE KG",227461208,"BioVenture TODE & Co KG",466,NA,NA,NA
+"32",250,250,"Perfect","BioWork NKDV SE",882313511,"BioWork NKDV Group",250,NA,NA,NA
+"33",295,295,"Perfect","ConsultBase YCEU GmbH",734771875,"ConsultBase YCEU",295,NA,NA,NA
+"34",427,427,"Perfect","ConsultLine EYNB KG",937879389,"ConsultLine EYNB",427,NA,NA,NA
+"35",294,294,"Perfect","ConsultLine UTUX AG",963926333,"ConsultLine UTUX",294,NA,NA,NA
+"36",258,258,"Perfect","ConsultSol QKIG KG",915792310,"ConsultSol QKIG",258,NA,NA,NA
+"37",161,161,"Perfect","ConsultSys IJUJ AG",759437841,"ConsultSys IJUJ Group",161,NA,NA,NA
+"38",400,400,"Perfect","ConsultSys TTIU GmbH",71766981,"ConsultSys TTIU",400,NA,NA,NA
+"39",244,244,"Perfect","ConsultVenture IXFO GmbH",786293496,"ConsultVenture IXFO",244,NA,NA,NA
+"40",409,409,"Perfect","ConsultWork VKSQ KG",326036534,"ConsultWork VKSQ",409,NA,NA,NA
+"41",478,478,"Perfect","DataLine SRRG GmbH",713680578,"DataLine SRRG",478,NA,NA,NA
+"42",393,393,"Perfect","DataLine UELE SE",52723849,"DataLine UELE Deutschland",393,NA,NA,NA
+"43",193,193,"Perfect","DataMat TEHL GmbH",621770754,"DataMat TEHL Deutschland",193,NA,NA,NA
+"44",124,124,"Perfect","DataNet DHWT SE",970276478,"DataNet DHWT",124,NA,NA,NA
+"45",168,168,"Perfect","DataNet YPRB SE",596376761,"DataNet YPRB",168,NA,NA,NA
+"46",280,280,"Perfect","DataNova AQOP AG",778622451,"DataNova AQOP Group",280,NA,NA,NA
+"47",23,23,"Perfect","DataNova KMLD SE",176674989,"DataNova KMLD",23,NA,NA,NA
+"48",54,54,"Perfect","DataSol OLCY AG",391577002,"DataSol OLCY Group",54,NA,NA,NA
+"49",212,212,"Perfect","DataSol XCVV GmbH",735798609,"DataSol XCVV Deutschland",212,NA,NA,NA
+"50",222,222,"Perfect","DataSys LLCY SE",733523808,"DataSys LLCY",222,NA,NA,NA
+"51",339,339,"Perfect","DataSys YGUE AG",191016355,"DataSys YGUE Deutschland",339,NA,NA,NA
+"52",437,437,"Perfect","DataTrust ITDS SE",749462426,"DataTrust ITDS & Co KG",437,NA,NA,NA
+"53",385,385,"Perfect","DataTrust JMDG KG",979986335,"DataTrust JMDG Deutschland",385,NA,NA,NA
+"54",227,227,"Perfect","DataTrust PVOI SE",469222968,"DataTrust PVOI & Co KG",227,NA,NA,NA
+"55",138,138,"Perfect","DataVenture BRQB AG",893372579,"DataVenture BRQB & Co KG",138,NA,NA,NA
+"56",480,480,"Perfect","DataWork ZSRQ AG",322146109,"DataWork ZSRQ",480,NA,NA,NA
+"57",337,337,"Perfect","FinBase QQNQ SE",539877733,"FinBase QQNQ",337,NA,NA,NA
+"58",63,63,"Perfect","FinMat ADEN AG",192510949,"FinMat ADEN",63,NA,NA,NA
+"59",463,463,"Perfect","FinMat CYPV KG",683546161,"FinMat CYPV",463,NA,NA,NA
+"60",443,443,"Perfect","FinNet HREC AG",417413131,"FinNet HREC & Co KG",443,NA,NA,NA
+"61",172,172,"Perfect","FinNova CMWL SE",125280260,"FinNova CMWL & Co KG",172,NA,NA,NA
+"62",291,291,"Perfect","FinNova UYQT KG",775438712,"FinNova UYQT & Co KG",291,NA,NA,NA
+"63",383,383,"Perfect","FinSys CXGQ SE",779977888,"FinSys CXGQ",383,NA,NA,NA
+"64",216,216,"Perfect","FinSys MPVM GmbH",395173038,"FinSys MPVM",216,NA,NA,NA
+"65",68,68,"Perfect","FinTrust FSYN AG",630308951,"FinTrust FSYN",68,NA,NA,NA
+"66",374,374,"Perfect","FinTrust TDJA SE",351540154,"FinTrust TDJA Group",374,NA,NA,NA
+"67",305,305,"Perfect","FinWork DOEI GmbH",821644906,"FinWork DOEI",305,NA,NA,NA
+"68",135,135,"Perfect","GastroBase BDCK SE",172771775,"GastroBase BDCK",135,NA,NA,NA
+"69",453,453,"Perfect","GastroBase OCOZ AG",75473614,"GastroBase OCOZ Deutschland",453,NA,NA,NA
+"70",304,304,"Perfect","GastroLine LUYU KG",175015921,"GastroLine LUYU & Co KG",304,NA,NA,NA
+"71",255,255,"Perfect","GastroLine NOPV KG",386945016,"GastroLine NOPV",255,NA,NA,NA
+"72",317,317,"Perfect","GastroNet DKCY SE",72588513,"GastroNet DKCY",317,NA,NA,NA
+"73",357,357,"Perfect","GastroNet PHYD KG",138439707,"GastroNet PHYD & Co KG",357,NA,NA,NA
+"74",261,261,"Perfect","GastroNet TDEY KG",560147340,"GastroNet TDEY",261,NA,NA,NA
+"75",9,9,"Perfect","GastroNova RZTO AG",975508871,"GastroNova RZTO",9,NA,NA,NA
+"76",12,12,"Perfect","GastroSys EJQU KG",295333549,"GastroSys EJQU",12,NA,NA,NA
+"77",260,260,"Perfect","GastroSys RNSZ SE",651665152,"GastroSys RNSZ",260,NA,NA,NA
+"78",375,375,"Perfect","GastroVenture AHYH KG",129785037,"GastroVenture AHYH",375,NA,NA,NA
+"79",313,313,"Perfect","GastroVenture HCCZ GmbH",815239735,"GastroVenture HCCZ Deutschland",313,NA,NA,NA
+"80",336,336,"Perfect","GastroVenture SPDN SE",458411128,"GastroVenture SPDN Group",336,NA,NA,NA
+"81",184,184,"Perfect","GastroWork GJHU GmbH",734076078,"GastroWork GJHU Group",184,NA,NA,NA
+"82",155,155,"Perfect","GastroWork GTVN KG",110386761,"GastroWork GTVN Group",155,NA,NA,NA
+"83",115,115,"Perfect","ImmoLine FDUZ KG",332489554,"ImmoLine FDUZ & Co KG",115,NA,NA,NA
+"84",440,440,"Perfect","ImmoLine GSAL SE",22345807,"ImmoLine GSAL",440,NA,NA,NA
+"85",378,378,"Perfect","ImmoMat AEBM GmbH",268916781,"ImmoMat AEBM & Co KG",378,NA,NA,NA
+"86",320,320,"Perfect","ImmoMat ULIU KG",645600874,"ImmoMat ULIU & Co KG",320,NA,NA,NA
+"87",341,341,"Perfect","ImmoNet HRDI AG",421305976,"ImmoNet HRDI Deutschland",341,NA,NA,NA
+"88",37,37,"Perfect","ImmoNet KICT GmbH",526627487,"ImmoNet KICT",37,NA,NA,NA
+"89",293,293,"Perfect","ImmoNet LIGJ SE",8685108,"ImmoNet LIGJ Group",293,NA,NA,NA
+"90",101,101,"Perfect","ImmoNet NENF AG",410546197,"ImmoNet NENF Group",101,NA,NA,NA
+"91",459,459,"Perfect","ImmoNova HGQZ SE",361055100,"ImmoNova HGQZ",459,NA,NA,NA
+"92",108,108,"Perfect","ImmoSys OYLY SE",861689253,"ImmoSys OYLY",108,NA,NA,NA
+"93",423,423,"Perfect","ImmoTrust EZJY KG",462736117,"ImmoTrust EZJY",423,NA,NA,NA
+"94",203,203,"Perfect","ImmoTrust YCVT KG",583642676,"immotrust ycvt kg",203,NA,NA,NA
+"95",323,323,"Perfect","ImmoTrust YTYX KG",357712699,"ImmoTrust YTYX",323,NA,NA,NA
+"96",273,273,"Perfect","ImmoVenture GWDV SE",91339630,"ImmoVenture GWDV Group",273,NA,NA,NA
+"97",95,95,"Perfect","ImmoWork ZYZS SE",520856509,"ImmoWork ZYZS",95,NA,NA,NA
+"98",211,211,"Perfect","SoftBase GDDK AG",609115360,"SoftBase GDDK",211,NA,NA,NA
+"99",411,411,"Perfect","SoftLine VECK KG",82771632,"SoftLine VECK",411,NA,NA,NA
+"100",500,500,"Perfect","SoftMat ONSI GmbH",64754105,"SoftMat ONSI",500,NA,NA,NA
+"101",52,52,"Perfect","SoftMat PGSD GmbH",459283045,"SoftMat PGSD Group",52,NA,NA,NA
+"102",348,348,"Perfect","SoftNet RBNU GmbH",535304406,"SoftNet RBNU",348,NA,NA,NA
+"103",217,217,"Perfect","SoftNova XCOB AG",538318505,"SoftNova XCOB Deutschland",217,NA,NA,NA
+"104",32,32,"Perfect","SoftSys EDMY GmbH",303839335,"SoftSys EDMY & Co KG",32,NA,NA,NA
+"105",13,13,"Perfect","SoftTrust CHRA GmbH",472473522,"SoftTrust CHRA & Co KG",13,NA,NA,NA
+"106",224,224,"Perfect","SoftVenture AXDZ KG",649528212,"SoftVenture AXDZ & Co KG",224,NA,NA,NA
+"107",136,136,"Perfect","SoftVenture AYNS AG",149865734,"SoftVenture AYNS Group",136,NA,NA,NA
+"108",103,103,"Perfect","SoftVenture OGQJ SE",867249379,"SoftVenture OGQJ & Co KG",103,NA,NA,NA
+"109",371,371,"Perfect","SoftWork HEQP KG",929569415,"SoftWork HEQP Group",371,NA,NA,NA
+"110",396,396,"Perfect","TechBase SVMO AG",678708922,"TechBase SVMO",396,NA,NA,NA
+"111",271,271,"Perfect","TechLine GSEI AG",659350623,"TechLine GSEI",271,NA,NA,NA
+"112",356,356,"Perfect","TechLine YJDS KG",150272614,"TechLine YJDS Group",356,NA,NA,NA
+"113",198,198,"Perfect","TechMat PFOD KG",41461165,"TechMat PFOD",198,NA,NA,NA
+"114",6,6,"Perfect","TechMat XPJL AG",995690262,"TechMat XPJL Group",6,NA,NA,NA
+"115",441,441,"Perfect","TechMat ZUPV SE",971481944,"TechMat ZUPV",441,NA,NA,NA
+"116",30,30,"Perfect","TechNet JEHA SE",839589800,"TechNet JEHA & Co KG",30,NA,NA,NA
+"117",29,29,"Perfect","TechNet YIVH AG",57473717,"TechNet YIVH",29,NA,NA,NA
+"118",47,47,"Perfect","TechNet ZFCB GmbH",803732065,"TechNet ZFCB",47,NA,NA,NA
+"119",109,109,"Perfect","TechNova IWBE GmbH",711584865,"TechNova IWBE",109,NA,NA,NA
+"120",338,338,"Perfect","TechNova MDLF KG",113785004,"TechNova MDLF",338,NA,NA,NA
+"121",112,112,"Perfect","TechNova UHLQ GmbH",817456712,"TechNova UHLQ Deutschland",112,NA,NA,NA
+"122",228,228,"Perfect","TechNova WVEV KG",729584168,"TechNova WVEV Group",228,NA,NA,NA
+"123",428,428,"Perfect","TechSol OPZG KG",851331244,"TechSol OPZG",428,NA,NA,NA
+"124",15,15,"Perfect","TechSol YZTT KG",571257836,"TechSol YZTT",15,NA,NA,NA
+"125",286,286,"Perfect","TechSol ZTUE KG",658709741,"TechSol ZTUE",286,NA,NA,NA
+"126",117,117,"Perfect","TechSys CAIG AG",97261186,"TechSys CAIG Group",117,NA,NA,NA
+"127",347,347,"Perfect","TechSys KPOQ SE",75963438,"TechSys KPOQ",347,NA,NA,NA
+"128",66,66,"Perfect","TechTrust DQRA AG",426176124,"TechTrust DQRA & Co KG",66,NA,NA,NA
+"129",75,75,"Perfect","TechWork HUHN SE",582011763,"TechWork HUHN",75,NA,NA,NA
+"130",1,1,"Fuzzy (Zoomer)","TechNet HVQN AG",182102783,"technet hvqn g",1,"CORRECT","The employer name is a close abbreviation/typo of the registry name TechNet HVQN AG, indicating the same company.",0
+"131",100,100,"Fuzzy (Zoomer)","TechWork KDVD KG",969570653,"techwor kdvd kg",100,"CORRECT","Names match except for spacing and capitalization, indicating the same company.",0
+"132",114,114,"Fuzzy (Zoomer)","ConsultSol JIYX KG",55784462,"consultsol jliyx kg",114,"CORRECT","Names match except for minor capitalization differences and spacing; legal suffix KG is consistent.",0
+"133",118,118,"Fuzzy (Zoomer)","SoftTrust ITKA KG",878429147,"softtrucst itka kg",118,"CORRECT","Names match except for minor typos; both refer to SoftTrust ITKA KG",0
+"134",121,121,"Fuzzy (Zoomer)","ImmoNova BXBE GmbH",389503928,"immonova bxbe gmhb",121,"CORRECT","Names match except for minor typos and legal suffix; clearly the same company.",0
+"135",129,129,"Fuzzy (Zoomer)","TechMat EBDJ KG",700770760,"techmat ebdqj kg",129,"CORRECT","Names match except for minor typos and case differences; legal suffix KG is consistent.",0
+"136",132,132,"Fuzzy (Zoomer)","BioSys CRHV KG",386756480,"biosys crhmv kg",132,"CORRECT","Names match except for minor letter order difference (crhmv vs crhv) likely a typo; both are KG entities with similar names.",0
+"137",133,133,"Fuzzy (Zoomer)","DataLine HAXD KG",629694772,"dataline had kg",133,"CORRECT","Names match closely except for minor capitalization and spacing differences; 'had' likely a typo for 'HAXD'; both are KG entities.",0
+"138",139,139,"Fuzzy (Zoomer)","AutoBase QJYT AG",752164166,"auxtobase qjyt ag",139,"CORRECT","Names match except for capitalization and minor spacing; likely the same company.",0
+"139",14,14,"Fuzzy (Zoomer)","ConsultNet NTQQ KG",847644947,"consultnet ntqqk g",14,"CORRECT","Names match closely except for legal suffixes; 'g' likely a typo for 'KG'.",0
+"140",140,140,"Fuzzy (Zoomer)","SoftWork BXSX GmbH",810554279,"softworkbxsx gmbh",140,"CORRECT","Names match exactly except for capitalization and spacing, which are minor differences.",0
+"141",154,154,"Fuzzy (Zoomer)","ConsultBase VPDW GmbH",336985904,"consulbase vpdw gmbh",154,"CORRECT","Names match exactly except for capitalization differences, indicating the same company.",0
+"142",17,17,"Fuzzy (Zoomer)","DataLine JKOP KG",184389026,"dataline jkpo kg",17,"CORRECT","Names match except for minor typos and case differences; likely the same company.",0
+"143",171,171,"Fuzzy (Zoomer)","GastroNova SBCK AG",818539074,"gastronova sbck ga",171,"CORRECT","Names match closely except for minor abbreviation and case differences; likely the same company.",0
+"144",178,178,"Fuzzy (Zoomer)","BioNova KLYU SE",530966357,"bionyova klyu se",178,"CORRECT","Names match except for minor capitalization differences; 'bionyova klyu se' corresponds to 'BioNova KLYU SE'",0
+"145",180,180,"Fuzzy (Zoomer)","BioBase YDIQ KG",674684620,"biobase ydi kg",180,"CORRECT","Names match closely except for a minor typo ('ydi' vs 'ydiq'), and both are KG entities, indicating the same company.",0
+"146",188,188,"Fuzzy (Zoomer)","ImmoWork JSOH AG",647311775,"immowork jsohag",188,"CORRECT","Names match closely except for legal suffix; 'immowork jsohag' corresponds to 'ImmoWork JSOH AG' with minor case and spacing differences.",0
+"147",19,19,"Fuzzy (Zoomer)","AutoWork CTQD GmbH",769444635,"autowork ctqd gmh",19,"CORRECT","Names match with minor typos and legal suffix aligns",0
+"148",192,192,"Fuzzy (Zoomer)","ConsultVenture FZEE SE",345827977,"conslutventure fzee se",192,"CORRECT","Names match except for minor typos and case differences; likely the same company.",0
+"149",202,202,"Fuzzy (Zoomer)","ImmoSol IZTU GmbH",166642604,"imosol iztu gmbh",202,"CORRECT","Names match except for minor capitalization differences; same legal suffix and wording.",0
+"150",205,205,"Fuzzy (Zoomer)","AutoTrust FZXA SE",312567552,"autotrust fzxa zse",205,"CORRECT","Names match except for capitalization and spacing; 'fzxa zse' corresponds to 'FZXA SE' indicating the same legal entity.",0
+"151",208,208,"Fuzzy (Zoomer)","TechMat ZTRM GmbH",174422410,"techmat ztr gmbh",208,"CORRECT","Names match closely except for a minor difference in suffix 'ZTR' vs 'ZTRM', likely a small typo or abbreviation; both include 'TechMat' and 'GmbH' indicating the same entity.",0
+"152",232,232,"Fuzzy (Zoomer)","SoftMat UQQX KG",205142146,"softmtat uqqx kg",232,"CORRECT","Names match exactly except for capitalization and minor spacing, indicating the same company.",0
+"153",233,233,"Fuzzy (Zoomer)","TechNova XARS KG",250396547,"technova xasr kg",233,"CORRECT","Names match closely except for minor capitalization and spacing differences; 'technova xasr kg' and 'TechNova XARS KG' refer to the same legal entity.",0
+"154",234,234,"Fuzzy (Zoomer)","FinMat ACBU AG",815236917,"finmat acbu ga",234,"CORRECT","Names match except for case and spacing; 'AG' suffix aligns with registry naming conventions.",0
+"155",239,239,"Fuzzy (Zoomer)","DataVenture XWNV SE",811638326,"dataventuvre xwnv se",239,"CORRECT","Names match closely except for minor typos and case differences; both include 'DataVenture XWNV SE' indicating the same legal entity.",0
+"156",241,241,"Fuzzy (Zoomer)","ImmoLine JBDS KG",476969650,"imoline jbds kg",241,"CORRECT","Names match exactly except for capitalization differences.",0
+"157",248,248,"Fuzzy (Zoomer)","ImmoSys QVEJ GmbH",380421243,"immosys qvej sgmbh",248,"CORRECT","Names match except for minor typos and legal suffix; clearly the same company.",0
+"158",253,253,"Fuzzy (Zoomer)","ConsultMat XUZE AG",80429841,"consulqtmat xuze ag",253,"CORRECT","Names match except for minor typos and case differences; both indicate the same AG entity.",0
+"159",259,259,"Fuzzy (Zoomer)","GastroWork PLRQ SE",47480965,"gastrowork plrrq se",259,"CORRECT","Names match exactly except for capitalization; 'plrrq' is likely a typo for 'PLRQ'.",0
+"160",26,26,"Fuzzy (Zoomer)","AutoTrust CTTX AG",763072149,"autotrust cjttx ag",26,"CORRECT","Names match except for capitalization and minor spacing; same legal suffix AG indicates same company.",0
+"161",270,270,"Fuzzy (Zoomer)","BioVenture YQCL AG",31748218,"bioventure qcl ag",270,"INCORRECT","Different company names with distinct letter sequences (qcl vs yqcl) suggest no clear relation.",1
+"162",278,278,"Fuzzy (Zoomer)","DataLine HVSN GmbH",208254454,"dataline hvsn gbmh",278,"CORRECT","Names match except for minor typos and legal suffix; clearly the same company.",0
+"163",279,279,"Fuzzy (Zoomer)","AutoWork QORY SE",988894915,"autowor qory se",279,"CORRECT","Names match ignoring case and minor spacing differences; 'autowor qory se' corresponds to 'AutoWork QORY SE'",0
+"164",283,283,"Fuzzy (Zoomer)","ConsultMat ZEIL GmbH",646013116,"consultmat zei gmbh",283,"CORRECT","Names match except for minor typo and case differences; both indicate the same company.",0
+"165",289,289,"Fuzzy (Zoomer)","AutoNet YNEO KG",557912405,"autonetw yneo kg",289,"CORRECT","Names match except for minor spacing and capitalization differences; same legal form KG.",0
+"166",292,292,"Fuzzy (Zoomer)","GastroNova EGFE GmbH",728733654,"gasronova egfe gmbh",292,"CORRECT","Names match except for minor typos and case differences; same legal suffix GmbH indicates same company.",0
+"167",299,299,"Fuzzy (Zoomer)","SoftTrust YMEK SE",543334713,"sofzttrust ymek se",299,"CORRECT","Names match closely except for minor typos; 'sofzttrust ymek se' is a misspelling of 'SoftTrust YMEK SE'",0
+"168",3,3,"Fuzzy (Zoomer)","FinNet ZDMO SE",412525227,"finnet zdm se",3,"CORRECT","Names match closely with minor abbreviation difference; likely the same company.",0
+"169",303,303,"Fuzzy (Zoomer)","BauWork TOBO GmbH",469561871,"bauwork tobogmbh",303,"CORRECT","Names match exactly except for spacing and capitalization; same legal entity.",0
+"170",307,307,"Fuzzy (Zoomer)","FinTrust YYAK GmbH",626312275,"fintrust yyak gbh",307,"CORRECT","Names match except for minor typos and legal suffix; clearly the same company.",0
+"171",309,309,"Fuzzy (Zoomer)","AutoNova NVXJ SE",304241413,"autonova mnvxj se",309,"CORRECT","Names match except for minor spacing and capitalization differences; likely the same company.",0
+"172",31,31,"Fuzzy (Zoomer)","SoftMat KBOB AG",910604939,"softmat akbob ag",31,"CORRECT","Names match closely except for minor abbreviation differences; both include 'SoftMat' and 'AG' indicating the same legal entity.",0
+"173",312,312,"Fuzzy (Zoomer)","DataNova MPJZ GmbH",631146151,"datanovaa mpjz gmbh",312,"CORRECT","Names match exactly except for capitalization and minor spacing, indicating the same company.",0
+"174",316,316,"Fuzzy (Zoomer)","DataLine MIZV KG",385793145,"datalinge mizv kg",316,"CORRECT","Names match except for capitalization and minor spacing differences; 'datalinge' is likely a typo for 'DataLine'.",0
+"175",319,319,"Fuzzy (Zoomer)","AutoWork XIOA KG",1662792,"autoork xioa kg",319,"CORRECT","Names match except for minor typos and case differences; both include 'XIOA KG' indicating the same legal entity.",0
+"176",324,324,"Fuzzy (Zoomer)","ImmoLine YNBD AG",513673250,"imoline ynbd ag",324,"CORRECT","Names match exactly except for capitalization differences.",0
+"177",326,326,"Fuzzy (Zoomer)","ConsultTrust VZXE SE",302787238,"consultrust vzxe se",326,"CORRECT","Names match exactly except for capitalization differences.",0
+"178",328,328,"Fuzzy (Zoomer)","AutoBase JPTO KG",837689515,"autobase jpto g",328,"CORRECT","Names match closely except for legal suffix (GmbH vs KG), which can indicate different company types but often related; likely the same entity or group.",0
+"179",344,344,"Fuzzy (Zoomer)","ImmoLine CWOC GmbH",903893320,"immoliine cwoc gmbh",344,"CORRECT","Names match exactly except for capitalization and minor spacing, indicating the same company.",0
+"180",349,349,"Fuzzy (Zoomer)","SoftBase RJTL SE",982788879,"softbase rjlt se",349,"CORRECT","Names match exactly except for capitalization differences; 'softbase rjlt se' corresponds to 'SoftBase RJTL SE'",0
+"181",351,351,"Fuzzy (Zoomer)","ImmoSol MVXR SE",30290687,"immosol mvxrse",351,"CORRECT","Names match except for spacing and case; likely the same company with minor formatting differences.",0
+"182",359,359,"Fuzzy (Zoomer)","AutoTrust HMJR SE",198054343,"autotrut hmjr se",359,"CORRECT","Names match except for minor capitalization and spacing differences; same legal entity indicated by 'SE' suffix.",0
+"183",36,36,"Fuzzy (Zoomer)","AutoBase MAIA SE",403129965,"autobase mia se",36,"CORRECT","Names match except for minor abbreviation and case differences; both indicate the same SE entity.",0
+"184",367,367,"Fuzzy (Zoomer)","TechTrust OXET AG",56439591,"techtrust oxet hag",367,"CORRECT","Names match closely except for minor abbreviation and case differences; likely the same company.",0
+"185",369,369,"Fuzzy (Zoomer)","AutoSol VVDH AG",646662276,"autosol vdh ag",369,"CORRECT","Names differ only by capitalization and minor spacing; likely the same company.",0
+"186",372,372,"Fuzzy (Zoomer)","DataBase WVMC SE",232559047,"database wmvmc se",372,"CORRECT","Names match except for minor capitalization differences; likely the same company.",0
+"187",384,384,"Fuzzy (Zoomer)","DataLine CYIM AG",317273215,"dahtaline cyim ag",384,"CORRECT","Names match except for minor typos and case differences; both indicate the same company 'DataLine CYIM AG'.",0
+"188",387,607,"Fuzzy (Zoomer)","ConsultBase WEMS AG",894887585,"consultbase emsp gmbh",387,"INCORRECT","Different company names with distinct suffixes (GmbH vs AG) and no clear indication of being the same legal entity or group.",1
+"189",388,388,"Fuzzy (Zoomer)","FinVenture DTWY GmbH",344845720,"finventure dtyw gmbh",388,"CORRECT","Names match except for capitalization; 'dtyw' and 'DTWY' are the same, indicating the same company.",0
+"190",397,397,"Fuzzy (Zoomer)","TechSys CITJ SE",536335763,"techsyst citj se",397,"CORRECT","Names match except for minor typos and case differences; likely the same company.",0
+"191",408,408,"Fuzzy (Zoomer)","DataLine ABKP AG",96354076,"dataline abkpa g",408,"CORRECT","Names match closely except for minor typos and legal suffix differences (G vs AG), indicating the same company.",0
+"192",413,413,"Fuzzy (Zoomer)","SoftMat WVUY KG",388642974,"softmatu wvuy kg",413,"CORRECT","Names match ignoring case and minor spacing differences; likely the same company.",0
+"193",418,418,"Fuzzy (Zoomer)","DataVenture FARA SE",486744437,"dataventxure fara se",418,"CORRECT","Names match exactly except for capitalization and spacing; likely the same company.",0
+"194",432,432,"Fuzzy (Zoomer)","ImmoWork ZDAA GmbH",680172994,"immowrk zdaa gmbh",432,"CORRECT","Names match exactly except for capitalization differences, indicating the same company.",0
+"195",445,445,"Fuzzy (Zoomer)","FinNova OSKF KG",23095366,"finnmova oskf kg",445,"CORRECT","Names match except for capitalization and spacing; same legal form KG indicates same company.",0
+"196",446,446,"Fuzzy (Zoomer)","ImmoNet NXUC AG",28554191,"immobnet nxuc ag",446,"CORRECT","Names match except for capitalization differences; same legal suffix and wording.",0
+"197",447,447,"Fuzzy (Zoomer)","GastroLine WHTE KG",520659194,"GastroLine WHTE Service",447,"CORRECT","The names differ only by the legal suffix (Service vs. KG), indicating the same company or a closely related entity within the same corporate group.",0
+"198",448,448,"Fuzzy (Zoomer)","FinNet OSLS AG",612933845,"finnet osl sag",448,"CORRECT","Names match closely except for minor abbreviation differences; likely the same company with slight variation in naming.",0
+"199",454,454,"Fuzzy (Zoomer)","FinTrust RGYO SE",314226740,"fintrst rgyo se",454,"CORRECT","The employer name is a minor typo/abbreviation of the registry name 'FinTrust RGYO SE', indicating the same company.",0
+"200",455,455,"Fuzzy (Zoomer)","ImmoBase WJEE KG",884852981,"immobamse wjee kg",455,"CORRECT","Names match except for minor typos; both indicate the same KG entity.",0
+"201",456,456,"Fuzzy (Zoomer)","ConsultTrust RVXX GmbH",130295092,"consulttrust rvxx gmhb",456,"CORRECT","Names match except for minor typos and legal suffix; clearly the same company.",0
+"202",458,458,"Fuzzy (Zoomer)","AutoNet UANV KG",545354568,"autonet uan kg",458,"CORRECT","Names match closely except for a minor typo ('uan' vs 'uanv'), and both are KG entities, indicating the same company.",0
+"203",461,461,"Fuzzy (Zoomer)","TechNova CZVL SE",931482609,"technovba czvl se",461,"CORRECT","Names match except for capitalization and spacing; likely the same company.",0
+"204",469,469,"Fuzzy (Zoomer)","ConsultLine EWTT SE",369796577,"consultline ewt se",469,"CORRECT","Names match except for a minor typo ('ewt' vs 'ewtt'), and both include 'ConsultLine' and 'SE', indicating the same legal entity.",0
+"205",477,477,"Fuzzy (Zoomer)","AutoLine POKN SE",135600383,"autline pokn se",477,"CORRECT","Names match except for minor typos and case differences; likely the same company.",0
+"206",485,485,"Fuzzy (Zoomer)","TechNova VCPU AG",365214012,"technva vcpu ag",485,"CORRECT","Names match except for minor typo and case differences; same legal suffix AG indicates same company.",0
+"207",486,486,"Fuzzy (Zoomer)","TechWork ISDS KG",649318385,"techwork isd skg",486,"CORRECT","Names match except for minor abbreviation difference (isd vs isds) and case; both indicate a KG entity, likely the same company.",0
+"208",490,490,"Fuzzy (Zoomer)","TechNet VSNB SE",770723781,"technet vsbn se",490,"CORRECT","Names match except for minor capitalization differences; likely the same company.",0
+"209",493,493,"Fuzzy (Zoomer)","AutoSys NRJK KG",139092726,"autosys nrk kg",493,"CORRECT","Names match except for a minor typo in 'nrk' vs 'nrjk', which is likely a small error; legal suffix KG matches.",0
+"210",62,62,"Fuzzy (Zoomer)","SoftLine MVKM KG",728253595,"softline mvkdm kg",62,"INCORRECT","Different abbreviations 'mvkdm' vs 'mvkm' suggest different entities; no clear match.",1
+"211",64,64,"Fuzzy (Zoomer)","FinWork ODXG AG",77881247,"finwork odx ag",64,"CORRECT","Names match except for minor spacing and suffix differences; likely the same company.",0
+"212",7,7,"Fuzzy (Zoomer)","AutoWork YXQZ GmbH",576733970,"autowork yxqz gmh",7,"CORRECT","Names match except for minor typos and legal suffix, indicating the same company.",0
+"213",78,78,"Fuzzy (Zoomer)","AutoNet TDSG GmbH",718211226,"autonet tdsgk gmbh",78,"CORRECT","Names match except for minor case differences and a small typo; both indicate the same company 'AutoNet TDSG GmbH'.",0
+"214",80,80,"Fuzzy (Zoomer)","BioMat SIDO GmbH",470509275,"biomat sido gbmh",80,"CORRECT","Names match except for minor typos and case differences; both refer to BioMat SIDO GmbH.",0
+"215",81,81,"Fuzzy (Zoomer)","DataMat JZXF GmbH",313988944,"datamat jzxf gmobh",81,"CORRECT","Names match with minor typos and legal suffix differences; clearly the same company.",0
+"216",82,82,"Fuzzy (Zoomer)","BauMat MFCM KG",754672165,"baumat mfcam kg",82,"CORRECT","Names match with minor case differences and spacing; legal suffix KG is consistent.",0
+"217",88,88,"Fuzzy (Zoomer)","GastroNova SEHI SE",145621556,"gastronova sei se",88,"INCORRECT","The registry name 'GastroNova SEHI SE' differs significantly from 'gastronova sei se' and includes 'SEHI' which is not a minor typo or abbreviation; likely different entities.",1
+"218",90,90,"Fuzzy (Zoomer)","GastroWork FQDJ GmbH",626051554,"gastrowork fqd gmbh",90,"CORRECT","Names match except for a minor typo in 'FQD' vs 'FQDJ'; likely the same company with a small abbreviation or typo.",0
+"219",91,91,"Fuzzy (Zoomer)","GastroSol KYZX KG",608865111,"gastrosol kyxz kg",91,"CORRECT","Names match exactly except for capitalization differences, indicating the same company.",0
+"220",415,415,"Fuzzy (FTS)","AutoNet YREJ GmbH",568852803,"AutoNet YREJ Service",415,"CORRECT","Names match except for the legal suffix GmbH, which is a common legal form and does not indicate a different company.",0
+"221",179,179,"Fuzzy (FTS)","GastroWork IXXU KG",712872482,"GastroWork IXXU Service",179,"CORRECT","The names differ only by legal suffix (Service vs. KG), indicating likely the same company or a related entity within the same group.",0
+"222",355,355,"Fuzzy (FTS)","FinNet NUSO GmbH",978526222,"finnet nuso gmhb",355,"CORRECT","Names match with minor typos and legal suffix corrected; same company.",0
+"223",426,426,"Fuzzy (FTS)","BauNova FIQT AG",697529031,"BauNova FIQT Service",426,"CORRECT","Only legal suffix differs (Service vs. AG), likely the same company or subsidiary within the BauNova FIQT group.",0
+"224",72,72,"Fuzzy (FTS)","GastroBase FZAF KG",767228108,"GastroBadse FZAF Group (Insolvenz)",72,"CORRECT","Names differ by a small typo ('Badse' vs 'Base') and legal form (Group vs KG) but clearly refer to the same entity; 'Insolvenz' indicates insolvency status, not a different company.",0
+"225",41,41,"Fuzzy (FTS)","DataSol OYJV KG",716437773,"dataslo oyjv kg",41,"CORRECT","Names match ignoring case and minor spacing differences; likely the same company.",0
+"226",431,431,"Fuzzy (FTS)","ConsultNova VVIX AG",922216502,"ConsultNoav VVIX (Insolvenz)",431,"CORRECT","Names differ only by a small typo ('Noav' vs 'Nova') and legal form (Insolvenz indicates insolvency status, AG is legal form), indicating the same company.",0
+"227",34,34,"Fuzzy (FTS)","ConsultVenture DULD AG",595393269,"ConsultVenturee DULD (Insolvenz)",34,"CORRECT","Names match closely except for a minor typo ('ConsultVenturee' vs 'ConsultVenture'), and 'AG' suffix is a legal form; '(Insolvenz)' indicates insolvency status but does not change the entity identity.",0
+"228",69,69,"Fuzzy (FTS)","BioSol IIXF KG",141554079,"bioslo iixf kg",69,"CORRECT","Names match except for capitalization and minor spacing differences; clearly the same company.",0
+"229",308,308,"Fuzzy (FTS)","BauMat JKYN GmbH",506310424,"BauMat JKYN Service",308,"CORRECT","Names match except for legal suffix, indicating the same company.",0
+"230",110,110,"Fuzzy (FTS)","AutoTrust WAVK GmbH",606711481,"AutoTrusxt WAVK (Insolvenz)",110,"CORRECT","The employer name 'AutoTrusxt WAVK (Insolvenz)' is a minor typo of 'AutoTrust WAVK GmbH' and indicates insolvency status; both refer to the same company.",0
+"231",362,362,"Fuzzy (FTS)","FinSol GBNM SE",299912888,"finsol gjbnm se",362,"CORRECT","Names match except for minor letter case differences and spacing; likely the same company.",0
+"232",160,160,"Fuzzy (FTS)","DataLine SFLS SE",906670587,"daaline sfls se",160,"CORRECT","Names match with minor differences in capitalization and spacing; 'daaline sfls se' is a typo or abbreviation of 'DataLine SFLS SE'.",0
+"233",391,391,"Fuzzy (FTS)","BioSys TAKH AG",910942492,"biosygs takh ag",391,"CORRECT","Names match except for minor capitalization differences; likely the same company.",0
+"234",392,392,"Fuzzy (FTS)","DataSys ZDBX SE",274684649,"datasys dzbx se",392,"CORRECT","Names match except for case differences; 'dzbx' and 'ZDBX' are the same ignoring case.",0
+"235",430,430,"Fuzzy (FTS)","DataSol TEWQ AG",213936060,"daasol tewq ag",430,"CORRECT","Names match except for capitalization and spacing; likely the same company with minor formatting differences.",0
+"236",429,429,"Fuzzy (FTS)","TechSys WQHQ AG",34113509,"techsy wqhq ag",429,"CORRECT","Names match except for capitalization; same legal suffix AG indicates same company.",0
+"237",398,398,"Fuzzy (FTS)","FinLine HOQI KG",273745028,"finlien hoqi kg",398,"CORRECT","Names match except for minor capitalization differences; same legal form KG and identical wording.",0
+"238",381,381,"Fuzzy (FTS)","DataMat HEHS AG",636410673,"DataMat HEHS Service",381,"CORRECT","Names match except for legal suffix (Service vs AG), likely the same company or subsidiary within the same group.",0
+"239",265,265,"Fuzzy (FTS)","DataNet VRLD GmbH",325258983,"datanet vrl dgmbh",265,"CORRECT","Names match closely with minor typos; 'vrl' vs 'vrld' likely a small error, and both are GmbH entities indicating the same company.",0
+"240",186,186,"Fuzzy (FTS)","TechLine YNDO SE",564044972,"TechLine YNDO Service",186,"CORRECT","The difference is only in the legal suffix (Service vs SE), which likely indicates the same company or a subsidiary within the same corporate group.",0
+"241",152,152,"Fuzzy (FTS)","DataNova YZBJ AG",817019451,"DataNova YZBJ Service",152,"CORRECT","Names match except for legal suffix (Service vs. AG), likely the same company or subsidiary.",0
+"242",421,421,"Fuzzy (FTS)","AutoNova FWIU KG",738471544,"autonov afwiu kg",421,"CORRECT","Names match except for capitalization and minor spacing differences; same legal suffix KG indicates same company.",0
+"243",389,389,"Fuzzy (FTS)","ConsultMat FDSI SE",203453959,"consulmtat fdsi se",389,"CORRECT","Names match with minor typos and case differences; likely the same company.",0
+"244",134,134,"Fuzzy (FTS)","FinWork QOBM KG",258416794,"finwork qbom kg",134,"CORRECT","Names match except for capitalization differences; same legal suffix KG indicates same company.",0
+"245",401,401,"Fuzzy (FTS)","TechTrust PGMT KG",472948026,"techrtust pgmt kg",401,"CORRECT","Names match with minor typos and case differences; same legal form KG.",0
+"246",24,24,"Fuzzy (FTS)","ImmoLine WIGT KG",73821372,"immolin ewigt kg",24,"CORRECT","Names match closely with minor typos; both are KG entities indicating the same company.",0
+"247",343,343,"Fuzzy (FTS)","ImmoNet AVMF SE",108125471,"immonte avmf se",343,"CORRECT","Names match closely except for minor abbreviation differences; likely the same company.",0
+"248",450,450,"Fuzzy (FTS)","FinBase VRHQ SE",94413775,"finbase vhq se",450,"CORRECT","Names match closely with minor abbreviation difference (vhq vs VRHQ), likely the same company.",0
+"249",111,111,"Fuzzy (FTS)","ImmoBase YOXT AG",583602994,"ImmoBase YOXT Group (Insolvenz)",111,"CORRECT","The employer name and registry entry share the core name 'ImmoBase YOXT' and differ only in legal suffix (AG vs. unspecified) and insolvency status, indicating the same company.",0
+"250",33,33,"Fuzzy (FTS)","TechSys SDIY AG",21600668,"techsys diy ag",33,"CORRECT","Names differ only by a small typo ('diy' vs 'sdiy'), likely the same company.",0
+"251",175,175,"Fuzzy (FTS)","ImmoNova NKAO GmbH",344920245,"immonvoa nkao gmbh",175,"CORRECT","Names match with minor typos and capitalization differences; same legal suffix GmbH",0
+"252",465,465,"Fuzzy (FTS)","FinNova YPBN AG",85399925,"finnva ypbn ag",465,"CORRECT","Names match with minor spacing and capitalization differences; likely the same company.",0
+"253",96,96,"Fuzzy (FTS)","DataSol KKNK KG",664610353,"DataSol KKNK Service",96,"CORRECT","The names differ only by the legal suffix (Service vs KG), which can indicate a related entity or subsidiary within the same corporate group.",0
+"254",315,315,"Fuzzy (FTS)","TechVenture LPQQ SE",701509833,"TechVenture LPQmQ Deutschland (Insolvenz)",315,"INCORRECT","Different legal forms (Insolvenz vs SE) and slight name difference (LPQmQ vs LPQQ) indicate different entities or unclear relation.",1
+"255",402,402,"Fuzzy (FTS)","BioTrust PIQG GmbH",368009477,"biotust piqg gmbh",402,"CORRECT","Names match ignoring case and minor spacing differences; same legal suffix GmbH",0
+"256",395,395,"Fuzzy (FTS)","ConsultNet HTVO SE",707541410,"consultnte htvo se",395,"CORRECT","The employer name is a misspelled and abbreviated version of the registry name ConsultNet HTVO SE, indicating the same company.",0
+"257",306,306,"Fuzzy (FTS)","BioNet IMEH SE",981085392,"BioNet IMEH Service",306,"CORRECT","The names differ only by the legal suffix 'Service' vs 'SE', likely indicating the same company or a related entity within the same group.",0
+"258",240,240,"Fuzzy (FTS)","TechWork YEYQ GmbH",172461018,"tcehwork yeyq gmbh",240,"CORRECT","The employer name is a typo of the registry entry; both refer to TechWork YEYQ GmbH.",0
+"259",189,189,"Fuzzy (FTS)","BioWork RDXC KG",528436799,"biowork rxdc kg",189,"CORRECT","Names match exactly except for capitalization differences, indicating the same company.",0
+"260",311,311,"Fuzzy (FTS)","FinTrust PIOD GmbH",545524436,"FinTrust PIOD Service",311,"CORRECT","Names match except for the legal suffix 'GmbH', indicating the same company.",0
+"261",191,191,"Fuzzy (FTS)","BauSol TUVI GmbH",834065623,"bausol tuvi gmhb",191,"CORRECT","Names match with minor typos and legal suffix differences; clearly the same company.",0
+"262",59,59,"Fuzzy (FTS)","TechSol KWJA AG",274122010,"techsol wkja ag",59,"CORRECT","Names match except for case differences; likely the same company.",0
+"263",162,162,"Fuzzy (FTS)","ConsultNet RTQB GmbH",136324083,"consutlnet rtqb gmbh",162,"CORRECT","The employer name is a misspelled version of the registry entry, but they clearly refer to the same company.",0
+"264",407,407,"Fuzzy (FTS)","AutoSys XNUF SE",938470138,"autoys xnuf se",407,"CORRECT","Names match except for minor letter case differences and spacing; likely the same company.",0
+"265",87,87,"Fuzzy (FTS)","FinMat XLTN SE",122687982,"fimat xltn se",87,"CORRECT","Names match except for capitalization and spacing; likely the same company.",0
+"266",334,334,"Fuzzy (FTS)","FinSol FRGV KG",323098610,"FinSol FRGV Service",334,"CORRECT","The names differ only by legal suffix (Service vs. KG), indicating the same company or a closely related entity within the same group.",0
+"267",167,167,"Fuzzy (FTS)","BioBase XNTT SE",642568096,"biobase ntt se",167,"CORRECT","Names match closely with minor variation in spacing and capitalization; likely the same company.",0
+"268",71,71,"Fuzzy (FTS)","FinWork BBHJ AG",586310931,"fniwork bbhj ag",71,"CORRECT","Names match except for minor capitalization and spacing differences; likely the same company.",0
+"269",451,451,"Fuzzy (FTS)","ImmoNova IJIF SE",918804107,"immonvoa ijif se",451,"CORRECT","Names match closely except for minor typos; both refer to ImmoNova IJIF SE, indicating the same company.",0
+"270",197,197,"Fuzzy (FTS)","SoftMat DORJ AG",372157280,"sotmat dorj ag",197,"CORRECT","Names match with minor typos and abbreviation differences; same legal entity indicated by 'AG' suffix.",0
+"271",274,274,"Fuzzy (FTS)","BioSys TCRC KG",982146438,"biosgys tcrc kg",274,"CORRECT","Names match except for minor typos and case differences; both indicate the same KG entity.",0
+"272",376,376,"Fuzzy (FTS)","SoftTrust EQBU SE",560277919,"SoftTrust jEQBU (Insolvenz)",376,"CORRECT","Names match closely except for minor abbreviation difference; 'Insolvenz' indicates insolvency status, not a different entity; both refer to SoftTrust EQBU SE.",0
+"273",256,256,"Fuzzy (FTS)","TechTrust YOMM SE",209617995,"techturst yomm se",256,"CORRECT","Names match except for minor typos and case differences; likely the same company.",0
+"274",318,318,"Fuzzy (FTS)","FinWork XLXT KG",441933163,"FinWork XLXT Service",318,"CORRECT","The names differ only by the legal suffix (Service vs. KG), which can indicate different company forms within the same group or entity.",0
+"275",488,488,"Fuzzy (FTS)","FinSol JPZK SE",342376739,"FinSol JPZK Service",488,"CORRECT","The names differ only by the legal suffix (Service vs SE), which can indicate a service branch or the main entity; likely the same company or closely related.",0
+"276",361,361,"Fuzzy (FTS)","BioBase HMKA KG",19947161,"biobase mhka kg",361,"CORRECT","Names match except for capitalization; 'biobase mhka kg' and 'BioBase HMKA KG' refer to the same legal entity.",0
+"277",321,321,"Fuzzy (FTS)","DataLine NDBA KG",647768537,"DataLine NDBA Service",321,"CORRECT","Both names share 'DataLine NDBA' and differ only in legal suffix (Service vs KG), indicating the same company or a closely related entity.",0
+"278",460,460,"Fuzzy (FTS)","TechNet IQLN AG",713597060,"tehcnet iqln ag",460,"CORRECT","The employer name is a typo of 'TechNet IQLN AG', which matches the registry entry exactly otherwise.",0
+"279",194,194,"Fuzzy (FTS)","AutoLine VRJW KG",663228975,"autolnie vrjw kg",194,"CORRECT","Names match except for minor typos; both indicate the same company 'AutoLine VRJW KG'.",0
+"280",107,107,"Fuzzy (FTS)","BioNet ENTH GmbH",825817493,"BioNet ENTH Service",107,"CORRECT","Names match except for the legal suffix 'GmbH' which is standard; 'Service' likely refers to a division or informal addition.",0
+"281",410,410,"Fuzzy (FTS)","GastroVenture LLXM SE",319799593,"GastrVenture LLXM Deutschland (Insolvenz)",410,"CORRECT","Names match closely except for minor differences in spelling and legal suffix; 'Insolvenz' indicates insolvency status, not a different entity.",0
+"282",247,247,"Fuzzy (FTS)","ConsultVenture CFIY SE",540773044,"ConsultVenture CFIY & Co KjG (Insolvenz)",247,"INCORRECT","Different legal forms (KjG vs SE) indicate distinct entities; no clear relation shown.",1
+"283",353,353,"Fuzzy (FTS)","FinNet UFVA AG",451481569,"finnet bufva ag",353,"CORRECT","Names differ only by minor letter order and capitalization; likely the same company with a small typo.",0
+"284",22,22,"Fuzzy (FTS)","BioNova OPFN KG",802211188,"bionova pfn kg",22,"CORRECT","Names match closely except for minor abbreviation difference (pfn vs OPFN), likely the same company.",0
+"285",126,126,"Fuzzy (FTS)","TechMat SGVK AG",355484555,"techmat svgk ag",126,"CORRECT","Names match closely except for minor letter transposition; likely the same company.",0
+"286",497,497,"Fuzzy (FTS)","GastroNet XSYT AG",587531696,"gastornet xsyt ag",497,"CORRECT","Names match except for capitalization and spacing; likely the same company.",0
+"287",425,425,"Fuzzy (FTS)","BauSol LFYO KG",723249920,"bauso lfyo kg",425,"CORRECT","Names match except for minor spacing and capitalization differences, indicating the same company.",0
+"288",97,97,"Fuzzy (FTS)","AutoNova SAXX GmbH",59347803,"autonoav saxx gmbh",97,"CORRECT","Names match except for capitalization and minor spacing; same legal suffix GmbH indicates same company.",0
+"289",449,449,"Fuzzy (FTS)","FinMat YYDR AG",26291888,"FinMat YYDR Service",449,"CORRECT","Names match except for legal suffix (Service vs. AG), which likely indicates the same company or a related entity within the same group.",0
+"290",43,43,"Fuzzy (FTS)","SoftBase UJBB AG",930449337,"SoftBase UJBB Service",43,"CORRECT","Names match except for legal suffix (Service vs AG), likely the same company or subsidiary.",0
+"291",147,147,"Fuzzy (FTS)","FinNova WCAL KG",630191779,"finnova cwal kg",147,"CORRECT","Names match except for capitalization and spacing; 'finnova cwal kg' and 'FinNova WCAL KG' refer to the same entity.",0
