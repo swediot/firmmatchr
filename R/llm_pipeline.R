@@ -13,9 +13,9 @@
 #' @param endpoint String. Azure Endpoint. Defaults to `Sys.getenv("AZURE_ENDPOINT")`.
 #' @param deployment String. Deployment name. Defaults to `Sys.getenv("AZURE_DEPLOYMENT")`.
 #' @return A data frame with added `LLM_decision` and `LLM_reason` columns.
-#' @import dplyr
+#' @importFrom dplyr mutate filter select left_join case_when as_tibble row_number tibble
 #' @import readr
-#' @import purrr
+#' @importFrom purrr pmap_dfr map_dfr
 #' @import glue
 #' @import cli
 #' @export
@@ -28,7 +28,6 @@ validate_matches_llm <- function(data,
                                  api_key = Sys.getenv("AZURE_API_KEY"),
                                  endpoint = Sys.getenv("AZURE_ENDPOINT"),
                                  deployment = Sys.getenv("AZURE_DEPLOYMENT")) {
-
   # 1. Validation
   if (api_key == "" || endpoint == "") {
     cli::cli_abort("Azure credentials missing. Please set AZURE_API_KEY and AZURE_ENDPOINT.")
@@ -47,9 +46,9 @@ validate_matches_llm <- function(data,
 
   to_check <- df_in %>%
     filter(
-      !is.na(dict_id),              # Must be matched
-      match_type != "Perfect",      # Skip Perfect matches
-      match_type != "Manual"        # Skip Manual matches
+      !is.na(dict_id), # Must be matched
+      match_type != "Perfect", # Skip Perfect matches
+      match_type != "Manual" # Skip Manual matches
     )
 
   if (nrow(to_check) == 0) {
@@ -95,7 +94,6 @@ validate_matches_llm <- function(data,
     d_names <- batch[[dict_name_col]]
 
     results <- purrr::pmap_dfr(list(q_names, d_names, batch$.row_id_internal), function(q, d, rid) {
-
       user_msg <- glue::glue("Employer: {q}\nRegistry Entry: {d}\n\nIs this the same company?")
 
       resp_json <- azure_chat_request(sys_msg, user_msg, endpoint, api_key, deployment)
@@ -126,7 +124,9 @@ validate_matches_llm <- function(data,
   cli::cli_alert_info("Merging chunks...")
   chunk_files <- list.files(output_dir, pattern = sprintf("^%s_chunk_\\d+.csv$", filename_stem), full.names = TRUE)
 
-  if (length(chunk_files) == 0) return(data)
+  if (length(chunk_files) == 0) {
+    return(data)
+  }
 
   llm_results <- purrr::map_dfr(chunk_files, readr::read_csv, show_col_types = FALSE)
 

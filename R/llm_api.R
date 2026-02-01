@@ -1,5 +1,5 @@
-#' @import httr
-#' @import jsonlite
+#' @importFrom httr POST add_headers timeout status_code content
+#' @importFrom jsonlite toJSON fromJSON
 #' @import glue
 #' @import cli
 NULL
@@ -22,10 +22,9 @@ azure_chat_request <- function(system_msg,
                                api_key,
                                deployment,
                                api_version = "2024-04-14") {
-
   # 1. Construct URL (Restoring your original logic)
   base <- sub("/+$", "", endpoint)
-  url  <- paste0(base, "/openai/v1/responses")
+  url <- paste0(base, "/openai/v1/responses")
 
   # 2. Construct Body (Restoring your original 'input' structure)
   # Your original script used 'input' list with roles, and 'model' in body.
@@ -33,7 +32,7 @@ azure_chat_request <- function(system_msg,
     model = deployment,
     input = list(
       list(role = "system", content = system_msg),
-      list(role = "user",   content = user_msg)
+      list(role = "user", content = user_msg)
     ),
     temperature = 0,
     max_output_tokens = 256
@@ -45,18 +44,21 @@ azure_chat_request <- function(system_msg,
   max_retries <- 3
 
   for (i in 1:max_retries) {
-    resp <- tryCatch({
-      httr::POST(
-        url,
-        httr::add_headers(
-          `Content-Type` = "application/json",
-          `api-key`      = api_key
-        ),
-        body = json_body,
-        encode = "json",
-        httr::timeout(60)
-      )
-    }, error = function(e) NULL)
+    resp <- tryCatch(
+      {
+        httr::POST(
+          url,
+          httr::add_headers(
+            `Content-Type` = "application/json",
+            `api-key`      = api_key
+          ),
+          body = json_body,
+          encode = "json",
+          httr::timeout(60)
+        )
+      },
+      error = function(e) NULL
+    )
 
     if (!is.null(resp)) {
       status <- httr::status_code(resp)
@@ -74,16 +76,23 @@ azure_chat_request <- function(system_msg,
     }
   }
 
-  if (is.null(resp) || httr::status_code(resp) != 200) return(NULL)
+  if (is.null(resp) || httr::status_code(resp) != 200) {
+    return(NULL)
+  }
 
   # 4. Parse Response (Restoring your specific parsing logic)
   # Your endpoint returns a different structure than standard Azure
-  parsed <- tryCatch({
-    content <- httr::content(resp, "text", encoding = "UTF-8")
-    jsonlite::fromJSON(content, simplifyVector = FALSE)
-  }, error = function(e) NULL)
+  parsed <- tryCatch(
+    {
+      content <- httr::content(resp, "text", encoding = "UTF-8")
+      jsonlite::fromJSON(content, simplifyVector = FALSE)
+    },
+    error = function(e) NULL
+  )
 
-  if (is.null(parsed)) return(NULL)
+  if (is.null(parsed)) {
+    return(NULL)
+  }
 
   # Try to extract text based on your original script's logic
   # Logic 1: output_text field
