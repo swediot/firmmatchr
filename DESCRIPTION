@@ -1,6 +1,6 @@
 Package: firmmatchr
 Title: Robust Probabilistic Matching for German Company Names
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Giulian", "Etingin-Frati", email = "etingin-frati@kof.ethz.ch", role = c("aut", "cre"))
 Description: A pipeline for matching messy company name strings against a clean dictionary (e.g., 'Orbis').
     Implements a cascading strategy: Exact -> Fuzzy ('Zoomerjoin') -> 'FTS5' (SQLite) -> Rarity Weighted.
