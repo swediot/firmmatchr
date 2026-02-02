@@ -2,3 +2,5 @@
 ^\.Rproj\.user$
 ^0_run_package\.R$
 ^test data$
+^CRAN-SUBMISSION$
+^cran-comments\.md$
