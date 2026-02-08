@@ -6,7 +6,7 @@
 #' @param data Data frame. Must contain the columns specified by `query_name_col` and `dict_name_col`.
 #' @param query_name_col String. Column containing the user's query name (Employer).
 #' @param dict_name_col String. Column containing the dictionary match name (Registry).
-#' @param output_dir String. Directory to save temporary chunks and final results.
+#' @param output_dir String. Directory to save temporary chunks and final results. Defaults to `tempdir()`.
 #' @param filename_stem String. Base name for output files.
 #' @param batch_size Integer. Number of rows to process before saving a chunk.
 #' @param api_key String. Azure API Key. Defaults to `Sys.getenv("AZURE_API_KEY")`.
@@ -19,10 +19,29 @@
 #' @import glue
 #' @import cli
 #' @export
+#' @examples
+#' \dontrun{
+#' # Sample matched data
+#' matched_data <- data.frame(
+#'   employer_name = c("BMW", "Siemens"),
+#'   registry_name = c("BMW AG", "SAP SE"),
+#'   dict_id = c("D001", "D002"),
+#'   match_type = c("Fuzzy", "Fuzzy")
+#' )
+#'
+#' # Validate using LLM (requires Azure credentials)
+#' validated <- validate_matches_llm(
+#'   data = matched_data,
+#'   query_name_col = "employer_name",
+#'   dict_name_col = "registry_name"
+#' )
+#'
+#' print(validated)
+#' }
 validate_matches_llm <- function(data,
                                  query_name_col,
                                  dict_name_col,
-                                 output_dir = "llm_checkpoints",
+                                 output_dir = tempdir(),
                                  filename_stem = "match_validation",
                                  batch_size = 20,
                                  api_key = Sys.getenv("AZURE_API_KEY"),

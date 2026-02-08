@@ -8,7 +8,7 @@ validate_matches_llm(
   data,
   query_name_col,
   dict_name_col,
-  output_dir = "llm_checkpoints",
+  output_dir = tempdir(),
   filename_stem = "match_validation",
   batch_size = 20,
   api_key = Sys.getenv("AZURE_API_KEY"),
@@ -23,7 +23,7 @@ validate_matches_llm(
 
 \item{dict_name_col}{String. Column containing the dictionary match name (Registry).}
 
-\item{output_dir}{String. Directory to save temporary chunks and final results.}
+\item{output_dir}{String. Directory to save temporary chunks and final results. Defaults to \code{tempdir()}.}
 
 \item{filename_stem}{String. Base name for output files.}
 
@@ -41,4 +41,24 @@ A data frame with added \code{LLM_decision} and \code{LLM_reason} columns.
 \description{
 Sends doubtful matches (not "Perfect" or "Unmatched") to an LLM for verification.
 Supports resuming from interruptions via chunk files.
+}
+\examples{
+\dontrun{
+# Sample matched data
+matched_data <- data.frame(
+  employer_name = c("BMW", "Siemens"),
+  registry_name = c("BMW AG", "SAP SE"),
+  dict_id = c("D001", "D002"),
+  match_type = c("Fuzzy", "Fuzzy")
+)
+
+# Validate using LLM (requires Azure credentials)
+validated <- validate_matches_llm(
+  data = matched_data,
+  query_name_col = "employer_name",
+  dict_name_col = "registry_name"
+)
+
+print(validated)
+}
 }

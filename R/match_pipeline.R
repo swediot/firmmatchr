@@ -18,6 +18,30 @@
 #' @import cli
 #' @import progressr
 #' @export
+#' @examples
+#' # Create sample query data
+#' queries <- data.frame(
+#'   query_id = 1:3,
+#'   company_name = c("BMW", "Siemens AG", "Deutsche Bank")
+#' )
+#'
+#' # Create sample dictionary
+#' dictionary <- data.frame(
+#'   orbis_id = c("D001", "D002", "D003"),
+#'   company_name = c("BMW AG", "Siemens Aktiengesellschaft", "Commerzbank AG")
+#' )
+#'
+#' # Match companies
+#' results <- match_companies(
+#'   queries = queries,
+#'   dictionary = dictionary,
+#'   query_col = "company_name",
+#'   dict_col = "company_name",
+#'   unique_id_col = "query_id",
+#'   dict_id_col = "orbis_id"
+#' )
+#'
+#' print(results)
 match_companies <- function(queries,
                             dictionary,
                             query_col = "company_name",
@@ -28,7 +52,6 @@ match_companies <- function(queries,
                             threshold_zoomer = 0.4,
                             threshold_rarity = 1.0,
                             n_cores = 1) {
-
   # Header
   cli::cli_h1("Starting Company Matching Pipeline")
   cli::cli_alert_info("Params: JW={threshold_jw} | Zoomer={threshold_zoomer} | Rarity={threshold_rarity}")
@@ -141,7 +164,6 @@ match_companies <- function(queries,
 
     # Output cleanly
     cli::cli_ul(formatted_list)
-
   } else {
     cli::cli_alert_warning("No matches found.")
   }

@@ -1,3 +1,11 @@
+# firmmatchr 0.1.2
+
+* Fix CRAN Submission Issues:
+    * Use single quotes for software/package names in DESCRIPTION.
+    * Add references for 'zoomerjoin' and 'SQLite'/'FTS5' in DESCRIPTION.
+    * Ensure `validate_matches_llm` writes to `tempdir()` by default.
+    * Ensure exported function examples are executable.
+
 # firmmatchr 0.1.1
 
 * Fix CRAN check NOTEs:

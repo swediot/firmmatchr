@@ -45,3 +45,28 @@ A data.table containing \code{query_id}, \code{dict_id}, and \code{match_type}.
 Runs a cascading matching pipeline: Exact -> Fuzzy (Zoomer) -> FTS5 -> Rarity.
 Matches found in earlier steps are removed from subsequent steps.
 }
+\examples{
+# Create sample query data
+queries <- data.frame(
+  query_id = 1:3,
+  company_name = c("BMW", "Siemens AG", "Deutsche Bank")
+)
+
+# Create sample dictionary
+dictionary <- data.frame(
+  orbis_id = c("D001", "D002", "D003"),
+  company_name = c("BMW AG", "Siemens Aktiengesellschaft", "Commerzbank AG")
+)
+
+# Match companies
+results <- match_companies(
+  queries = queries,
+  dictionary = dictionary,
+  query_col = "company_name",
+  dict_col = "company_name",
+  unique_id_col = "query_id",
+  dict_id_col = "orbis_id"
+)
+
+print(results)
+}

@@ -16,3 +16,12 @@ A character vector of normalized names.
 Standardizes company names by lowercasing, removing legal suffixes,
 translating characters to ASCII, and removing noise words.
 }
+\examples{
+# Normalize a single company name
+normalize_company_name("BMW AG")
+normalize_company_name("Siemens GmbH & Co. KG")
+
+# Normalize multiple names
+companies <- c("Deutsche Bank AG", "VW Group", "BASF SE")
+normalize_company_name(companies)
+}
