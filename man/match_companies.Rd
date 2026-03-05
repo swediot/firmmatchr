@@ -46,6 +46,9 @@ Runs a cascading matching pipeline: Exact -> Fuzzy (Zoomer) -> FTS5 -> Rarity.
 Matches found in earlier steps are removed from subsequent steps.
 }
 \examples{
+\dontshow{
+old_threads <- data.table::setDTthreads(1)
+}
 # Create sample query data
 queries <- data.frame(
   query_id = 1:3,
@@ -69,4 +72,7 @@ results <- match_companies(
 )
 
 print(results)
+\dontshow{
+data.table::setDTthreads(old_threads)
+}
 }

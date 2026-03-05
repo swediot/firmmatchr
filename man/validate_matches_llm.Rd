@@ -2,7 +2,7 @@
 % Please edit documentation in R/llm_pipeline.R
 \name{validate_matches_llm}
 \alias{validate_matches_llm}
-\title{Validate Matches using LLM (Azure OpenAI, OpenAI, or Local)}
+\title{Validate Matches using LLM (Azure OpenAI)}
 \usage{
 validate_matches_llm(
   data,
@@ -43,7 +43,7 @@ A data frame with added \code{LLM_decision} and \code{LLM_reason} columns.
 }
 \description{
 Sends doubtful matches (not "Perfect" or "Unmatched") to an LLM for verification.
-Supports resuming from interruptions via chunk files. Supports Azure OpenAI, standard OpenAI, and local OpenAI-compatible endpoints (like Ollama or LM Studio).
+Supports resuming from interruptions via chunk files.
 }
 \examples{
 \dontrun{
@@ -55,23 +55,11 @@ matched_data <- data.frame(
   match_type = c("Fuzzy", "Fuzzy")
 )
 
-# Validate using LLM (requires credentials)
+# Validate using LLM (requires Azure credentials)
 validated <- validate_matches_llm(
   data = matched_data,
   query_name_col = "employer_name",
-  dict_name_col = "registry_name",
-  engine = "azure"
-)
-
-# Example using a Local LLM (e.g. Ollama running on port 11434)
-validated_local <- validate_matches_llm(
-  data = matched_data,
-  query_name_col = "employer_name",
-  dict_name_col = "registry_name",
-  engine = "local",
-  endpoint = "http://localhost:11434/v1",
-  deployment = "llama3:8b",
-  api_key = "EMPTY"  # Standard placeholder for local engines
+  dict_name_col = "registry_name"
 )
 
 print(validated)
