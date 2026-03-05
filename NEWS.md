@@ -1,3 +1,10 @@
+# firmmatchr 0.1.3
+
+* New Features:
+    * Added standard OpenAI-compatible support to `validate_matches_llm` enabling it to connect to local LLM instances (like Ollama or LM Studio).
+    * Added an `engine` argument allowing choice between `"azure"`, `"openai"`, or `"local"`.
+    * Extended documentation to cover local LLM usage with code examples.
+
 # firmmatchr 0.1.2
 
 * Fix CRAN Submission Issues:

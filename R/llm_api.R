@@ -115,3 +115,112 @@ azure_chat_request <- function(system_msg,
   # Fallback: return raw content if we can't parse the specific field
   return(NULL)
 }
+
+#' Internal OpenAI/Local LLM Chat Completion Wrapper
+#'
+#' Sends a request to a standard OpenAI-compatible endpoint (e.g. /v1/chat/completions).
+#' Used for both OpenAI's official API and local LLMs (Ollama, LM Studio, vLLM).
+#'
+#' @param system_msg String. The instructions for the LLM.
+#' @param user_msg String. The specific case to evaluate.
+#' @param endpoint String. Base URL (e.g., "http://localhost:11434/v1").
+#' @param api_key String. API Key. Often not required for local LLMs.
+#' @param model String. Model name.
+#' @return A character string (the JSON response) or NULL on failure.
+#' @keywords internal
+openai_chat_request <- function(system_msg,
+                                user_msg,
+                                endpoint,
+                                api_key,
+                                model) {
+  # 1. Construct URL (Standard OpenAI format)
+  base <- sub("/+$", "", endpoint)
+
+  # For local instances that don't have /v1 standard paths or for explicit configurations.
+  if (grepl("chat/completions$", base)) {
+    url <- base
+  } else {
+    url <- paste0(base, "/chat/completions")
+  }
+
+  # 2. Construct Standard OpenAI Body
+  body <- list(
+    model = model,
+    messages = list(
+      list(role = "system", content = system_msg),
+      list(role = "user", content = user_msg)
+    ),
+    temperature = 0,
+    max_tokens = 256
+  )
+
+  json_body <- jsonlite::toJSON(body, auto_unbox = TRUE)
+
+  # 3. Headers
+  headers <- httr::add_headers(
+    `Content-Type` = "application/json"
+  )
+  if (!is.null(api_key) && nchar(api_key) > 0) {
+    headers <- httr::add_headers(
+      `Content-Type` = "application/json",
+      `Authorization` = paste("Bearer", api_key)
+    )
+  }
+
+  # 4. Retry Logic
+  max_retries <- 3
+
+  for (i in 1:max_retries) {
+    resp <- tryCatch(
+      {
+        httr::POST(
+          url,
+          headers,
+          body = json_body,
+          encode = "json",
+          httr::timeout(60)
+        )
+      },
+      error = function(e) NULL
+    )
+
+    if (!is.null(resp)) {
+      status <- httr::status_code(resp)
+      if (status == 200) break
+
+      if (status >= 500 || status == 429) {
+        Sys.sleep(2 * i)
+      } else {
+        cli::cli_alert_danger("API Fatal Error: {status}")
+        return(NULL)
+      }
+    } else {
+      Sys.sleep(1)
+    }
+  }
+
+  if (is.null(resp) || httr::status_code(resp) != 200) {
+    return(NULL)
+  }
+
+  # 5. Parse Response (Standard OpenAI parsing)
+  parsed <- tryCatch(
+    {
+      content <- httr::content(resp, "text", encoding = "UTF-8")
+      jsonlite::fromJSON(content, simplifyVector = FALSE)
+    },
+    error = function(e) NULL
+  )
+
+  if (is.null(parsed)) {
+    return(NULL)
+  }
+
+  if (!is.null(parsed$choices) && length(parsed$choices) > 0) {
+    if (!is.null(parsed$choices[[1]]$message$content)) {
+      return(parsed$choices[[1]]$message$content)
+    }
+  }
+
+  return(NULL)
+}

@@ -9,9 +9,10 @@
 #' @param output_dir String. Directory to save temporary chunks and final results. Defaults to `tempdir()`.
 #' @param filename_stem String. Base name for output files.
 #' @param batch_size Integer. Number of rows to process before saving a chunk.
-#' @param api_key String. Azure API Key. Defaults to `Sys.getenv("AZURE_API_KEY")`.
-#' @param endpoint String. Azure Endpoint. Defaults to `Sys.getenv("AZURE_ENDPOINT")`.
-#' @param deployment String. Deployment name. Defaults to `Sys.getenv("AZURE_DEPLOYMENT")`.
+#' @param api_key String. API Key. Defaults to `Sys.getenv("AZURE_API_KEY")` or `Sys.getenv("OPENAI_API_KEY")`.
+#' @param endpoint String. API Endpoint. Defaults to `Sys.getenv("AZURE_ENDPOINT")` or `Sys.getenv("OPENAI_ENDPOINT")`.
+#' @param deployment String. Deployment or model name. Defaults to `Sys.getenv("AZURE_DEPLOYMENT")` or `Sys.getenv("OPENAI_MODEL")`.
+#' @param engine String. Either `"azure"`, `"openai"`, or `"local"`. Defaults to `"azure"`. Use `"local"` (or `"openai"`) for local LLMs like Ollama.
 #' @return A data frame with added `LLM_decision` and `LLM_reason` columns.
 #' @importFrom dplyr mutate filter select left_join case_when as_tibble row_number tibble
 #' @import readr
@@ -44,12 +45,32 @@ validate_matches_llm <- function(data,
                                  output_dir = tempdir(),
                                  filename_stem = "match_validation",
                                  batch_size = 20,
-                                 api_key = Sys.getenv("AZURE_API_KEY"),
-                                 endpoint = Sys.getenv("AZURE_ENDPOINT"),
-                                 deployment = Sys.getenv("AZURE_DEPLOYMENT")) {
+                                 api_key = NULL,
+                                 endpoint = NULL,
+                                 deployment = NULL,
+                                 engine = c("azure", "openai", "local")) {
   # 1. Validation
-  if (api_key == "" || endpoint == "") {
-    cli::cli_abort("Azure credentials missing. Please set AZURE_API_KEY and AZURE_ENDPOINT.")
+  engine <- match.arg(engine)
+
+  # Setup defaults based on engine if not provided
+  if (engine == "azure") {
+    if (is.null(api_key)) api_key <- Sys.getenv("AZURE_API_KEY")
+    if (is.null(endpoint)) endpoint <- Sys.getenv("AZURE_ENDPOINT")
+    if (is.null(deployment)) deployment <- Sys.getenv("AZURE_DEPLOYMENT")
+
+    if (api_key == "" || endpoint == "" || deployment == "") {
+      cli::cli_abort("Azure credentials missing. Please set AZURE_API_KEY, AZURE_ENDPOINT, and AZURE_DEPLOYMENT, or provide them as arguments.")
+    }
+  } else {
+    # OpenAI or Local
+    if (is.null(api_key)) api_key <- Sys.getenv("OPENAI_API_KEY")
+    if (is.null(endpoint)) endpoint <- Sys.getenv("OPENAI_ENDPOINT")
+    if (is.null(deployment)) deployment <- Sys.getenv("OPENAI_MODEL")
+
+    # For local, allow empty key but endpoint and model must generally not be strictly empty unless the tool supports it.
+    if (endpoint == "") {
+      cli::cli_abort("OpenAI/Local endpoint missing. For local LLMs, usually it's `http://localhost:11434/v1` for Ollama or `http://localhost:1234/v1` for LM Studio. Provide them as arguments or through OPENAI_ENDPOINT.")
+    }
   }
 
   if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
@@ -115,7 +136,11 @@ validate_matches_llm <- function(data,
     results <- purrr::pmap_dfr(list(q_names, d_names, batch$.row_id_internal), function(q, d, rid) {
       user_msg <- glue::glue("Employer: {q}\nRegistry Entry: {d}\n\nIs this the same company?")
 
-      resp_json <- azure_chat_request(sys_msg, user_msg, endpoint, api_key, deployment)
+      if (engine == "azure") {
+        resp_json <- azure_chat_request(sys_msg, user_msg, endpoint, api_key, deployment)
+      } else {
+        resp_json <- openai_chat_request(sys_msg, user_msg, endpoint, api_key, deployment)
+      }
 
       decision <- "ERROR"
       reason <- "API Failed"

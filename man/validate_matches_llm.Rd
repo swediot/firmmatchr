@@ -2,7 +2,7 @@
 % Please edit documentation in R/llm_pipeline.R
 \name{validate_matches_llm}
 \alias{validate_matches_llm}
-\title{Validate Matches using LLM (Azure OpenAI)}
+\title{Validate Matches using LLM (Azure OpenAI, OpenAI, or Local)}
 \usage{
 validate_matches_llm(
   data,
@@ -11,9 +11,10 @@ validate_matches_llm(
   output_dir = tempdir(),
   filename_stem = "match_validation",
   batch_size = 20,
-  api_key = Sys.getenv("AZURE_API_KEY"),
-  endpoint = Sys.getenv("AZURE_ENDPOINT"),
-  deployment = Sys.getenv("AZURE_DEPLOYMENT")
+  api_key = NULL,
+  endpoint = NULL,
+  deployment = NULL,
+  engine = c("azure", "openai", "local")
 )
 }
 \arguments{
@@ -29,18 +30,20 @@ validate_matches_llm(
 
 \item{batch_size}{Integer. Number of rows to process before saving a chunk.}
 
-\item{api_key}{String. Azure API Key. Defaults to \code{Sys.getenv("AZURE_API_KEY")}.}
+\item{api_key}{String. API Key. Defaults to \code{Sys.getenv("AZURE_API_KEY")} or \code{Sys.getenv("OPENAI_API_KEY")}.}
 
-\item{endpoint}{String. Azure Endpoint. Defaults to \code{Sys.getenv("AZURE_ENDPOINT")}.}
+\item{endpoint}{String. API Endpoint. Defaults to \code{Sys.getenv("AZURE_ENDPOINT")} or \code{Sys.getenv("OPENAI_ENDPOINT")}.}
 
-\item{deployment}{String. Deployment name. Defaults to \code{Sys.getenv("AZURE_DEPLOYMENT")}.}
+\item{deployment}{String. Deployment or model name. Defaults to \code{Sys.getenv("AZURE_DEPLOYMENT")} or \code{Sys.getenv("OPENAI_MODEL")}.}
+
+\item{engine}{String. Either \code{"azure"}, \code{"openai"}, or \code{"local"}. Defaults to \code{"azure"}. Use \code{"local"} (or \code{"openai"}) for local LLMs like Ollama.}
 }
 \value{
 A data frame with added \code{LLM_decision} and \code{LLM_reason} columns.
 }
 \description{
 Sends doubtful matches (not "Perfect" or "Unmatched") to an LLM for verification.
-Supports resuming from interruptions via chunk files.
+Supports resuming from interruptions via chunk files. Supports Azure OpenAI, standard OpenAI, and local OpenAI-compatible endpoints (like Ollama or LM Studio).
 }
 \examples{
 \dontrun{
@@ -52,11 +55,23 @@ matched_data <- data.frame(
   match_type = c("Fuzzy", "Fuzzy")
 )
 
-# Validate using LLM (requires Azure credentials)
+# Validate using LLM (requires credentials)
 validated <- validate_matches_llm(
   data = matched_data,
   query_name_col = "employer_name",
-  dict_name_col = "registry_name"
+  dict_name_col = "registry_name",
+  engine = "azure"
+)
+
+# Example using a Local LLM (e.g. Ollama running on port 11434)
+validated_local <- validate_matches_llm(
+  data = matched_data,
+  query_name_col = "employer_name",
+  dict_name_col = "registry_name",
+  engine = "local",
+  endpoint = "http://localhost:11434/v1",
+  deployment = "llama3:8b",
+  api_key = "EMPTY"  # Standard placeholder for local engines
 )
 
 print(validated)
