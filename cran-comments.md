@@ -1,9 +1,13 @@
 ## Test environments
-* local Windows 11, R 4.6.1
-* win-builder (devel and release)
+* local Windows 11, R 4.6.1 (with --run-donttest)
+* win-builder, R-devel (2026-07-26 r90304)
 
 ## R CMD check results
 0 errors | 0 warnings | 0 notes
+
+win-builder R-devel returned `Status: OK`. The macOS builder was not reachable
+at the time of submission (its job endpoint was returning HTTP 502); the package
+contains no compiled code, so platform-specific behaviour is not expected.
 
 ## Submission notes
 This is a new feature/bug-fix release (0.2.0), not a resubmission of a rejected
