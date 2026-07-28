@@ -1,16 +1,34 @@
 ## Test environments
-* local macOS, R 4.x
+* local Windows 11, R 4.6.1
 * win-builder (devel and release)
 
 ## R CMD check results
 0 errors | 0 warnings | 0 notes
 
-* This is a resubmission. 
+## Submission notes
+This is a new feature/bug-fix release (0.2.0), not a resubmission of a rejected
+version.
 
-## Response to CRAN Feedback
-* **Local LLM Support**: Added support for standard OpenAI-compatible endpoints to `validate_matches_llm()`, fulfilling user requests to allow local inference (e.g., Ollama) alongside Azure OpenAI.
-* **DESCRIPTION Formatting**: I have enclosed all software names in single quotes as requested.
-* **Examples**: Executable examples are provided in `.Rd` files (default to tempdir output).
+Two substantive changes, both reported by users:
+
+* `normalize_company_name()` now supports German, French, Italian and English
+  conventions (new `lang` argument) rather than German only, and the package
+  title was updated accordingly. New `company_name_stopwords()` exposes which
+  tokens are stripped.
+* `normalize_company_name()` is lossy, so distinct dictionary entries can
+  normalize to the same string, and `match_companies()` previously aborted in
+  that case. It now groups such entries, matches each group once, and returns a
+  crosswalk (`dict_crosswalk()`, `expand_matches()`) so every original entry
+  stays traceable.
+
+See NEWS.md. Because the default normalization scope and the set of returned
+columns both changed, the minor version was bumped.
 
 ## Notes
-* Spelling: 'Orbis', 'zoomerjoin', 'Ollama', and 'FTS5' are technical terms/product names. They have been quoted in the Description and documentation.
+* Spelling: 'Orbis', 'zoomerjoin', 'Ollama' and 'FTS5' are technical terms or
+  product names. They are quoted in the Description and listed in
+  inst/WORDLIST.
+* Examples that call the matching pipeline are wrapped in `\donttest{}` because
+  they use the multi-threaded Rust internals of 'zoomerjoin'.
+* `validate_matches_llm()` requires network access and API credentials, so its
+  example is wrapped in `\dontrun{}`. It writes to `tempdir()` by default.

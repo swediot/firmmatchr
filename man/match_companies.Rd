@@ -14,7 +14,12 @@ match_companies(
   threshold_jw = 0.8,
   threshold_zoomer = 0.4,
   threshold_rarity = 1,
-  n_cores = 1
+  n_cores = 1,
+  dict_norm = TRUE,
+  query_norm = TRUE,
+  lang = c("de", "fr", "it", "en"),
+  extra_stopwords = NULL,
+  on_duplicate = c("collapse", "error")
 )
 }
 \arguments{
@@ -37,14 +42,67 @@ match_companies(
 \item{threshold_rarity}{Numeric. Minimum score for rarity matching. Default 1.0.}
 
 \item{n_cores}{Integer. Number of cores (reserved for future parallel implementation).}
+
+\item{dict_norm}{Logical. Apply \code{\link[=normalize_company_name]{normalize_company_name()}} to the dictionary
+names? Set to \code{FALSE} if the dictionary is already cleaned. Default \code{TRUE}.}
+
+\item{query_norm}{Logical. Apply \code{\link[=normalize_company_name]{normalize_company_name()}} to the query
+names? Set to \code{FALSE} if the queries are already cleaned. Default \code{TRUE}.
+Both sides should normally use the same setting.}
+
+\item{lang}{Character vector of language conventions to apply when
+normalizing. Any of \code{"de"} (German), \code{"fr"} (French), \code{"it"} (Italian),
+\code{"en"} (English). Defaults to all four, which suits mixed-language
+registers such as the Swiss one. Narrow it for single-language data to
+strip fewer tokens. See \code{\link[=normalize_company_name]{normalize_company_name()}}.}
+
+\item{extra_stopwords}{Optional character vector of additional whole-word
+tokens to strip from both sides, on top of the built-in lists. Country
+names are kept by default; pass them here to remove them.}
+
+\item{on_duplicate}{String. What to do when normalization maps several
+dictionary rows onto the same string: \code{"collapse"} (default) groups them
+and keeps a crosswalk, \code{"error"} aborts.}
 }
 \value{
-A data.table containing \code{query_id}, \code{dict_id}, and \code{match_type}.
+A \code{data.table} with one row per matched query row and columns
+\code{query_id}, \code{query_name}, \code{dict_id}, \code{dict_name}, \code{match_type},
+\code{n_dict_ids} and \code{dict_id_all}. The dictionary crosswalk is attached as the
+\code{"dict_crosswalk"} attribute; retrieve it with \code{\link[=dict_crosswalk]{dict_crosswalk()}}.
 }
 \description{
 Runs a cascading matching pipeline: Exact -> Fuzzy (Zoomer) -> FTS5 -> Rarity.
-Matches found in earlier steps are removed from subsequent steps.
+Matches found in earlier steps are removed from subsequent steps. Names are
+normalized with German, French, Italian and English conventions by default;
+see the \code{lang} argument.
 }
+\section{Duplicate handling}{
+
+Normalization is lossy on purpose: \code{"Meier GmbH"} and \code{"Meier AG"} both
+become \code{"meier"}. Distinct dictionary rows can therefore collapse onto the
+same normalized string. Rather than failing, \code{match_companies()} groups such
+rows, matches against one representative per group, and keeps a full
+crosswalk so no original row is ever lost:
+\itemize{
+\item \code{dict_id} in the result is the representative (first) id of the group.
+\item \code{dict_id_all} lists every id in the group, separated by \code{"|"}.
+\item \code{n_dict_ids} is the size of the group (\code{1} when there was no collapse).
+\item \code{\link[=dict_crosswalk]{dict_crosswalk()}} returns the mapping from every original dictionary row
+to its representative, and \code{\link[=expand_matches]{expand_matches()}} expands a result table to one
+row per original dictionary row.
+}
+
+Set \code{on_duplicate = "error"} to restore the older, strict behaviour of
+aborting when duplicates are present.
+
+Queries are handled the same way: identical normalized query names are
+matched once and the result is fanned back out, so duplicated query names
+(and even duplicated query ids) are safe.
+
+Rows whose name is empty or \code{NA} after normalization are dropped with a
+warning, since an empty string would otherwise match every other empty string.
+}
+
 \examples{
 # Create sample query data
 queries <- data.frame(
@@ -52,10 +110,11 @@ queries <- data.frame(
   company_name = c("BMW", "Siemens AG", "Deutsche Bank")
 )
 
-# Create sample dictionary
+# Dictionary with two rows that collapse onto the same normalized name
+# ("siemens"): the pipeline groups them instead of failing.
 dictionary <- data.frame(
-  orbis_id = c("D001", "D002", "D003"),
-  company_name = c("BMW AG", "Siemens Aktiengesellschaft", "Commerzbank AG")
+  orbis_id = c("D001", "D002", "D003", "D004"),
+  company_name = c("BMW AG", "Siemens AG", "Siemens GmbH", "Commerzbank AG")
 )
 
 # Match companies (uses multi-threaded Rust internals via zoomerjoin)
@@ -70,5 +129,11 @@ results <- match_companies(
 )
 
 print(results)
+
+# Recover every original dictionary row behind a collapsed match
+print(expand_matches(results))
 }
+}
+\seealso{
+\code{\link[=dict_crosswalk]{dict_crosswalk()}}, \code{\link[=expand_matches]{expand_matches()}}
 }

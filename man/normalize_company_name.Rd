@@ -4,24 +4,91 @@
 \alias{normalize_company_name}
 \title{Normalize Company Names}
 \usage{
-normalize_company_name(x)
+normalize_company_name(
+  x,
+  lang = c("de", "fr", "it", "en"),
+  extra_stopwords = NULL
+)
 }
 \arguments{
 \item{x}{A character vector of company names.}
+
+\item{lang}{Character vector of language codes whose conventions should be
+applied. Any of \code{"de"} (German), \code{"fr"} (French), \code{"it"} (Italian),
+\code{"en"} (English). Defaults to all four; narrow it if your data is
+single-language and you want to avoid over-stripping.}
+
+\item{extra_stopwords}{Optional character vector of additional whole-word
+tokens to strip, applied after the built-in lists. Use it for
+corpus-specific filler, or to remove geography (\code{c("deutschland", "schweiz")}), which is kept by default.}
 }
 \value{
 A character vector of normalized names.
 }
 \description{
-Standardizes company names by lowercasing, removing legal suffixes,
-translating characters to ASCII, and removing noise words.
+Standardizes company names by lowercasing, transliterating to ASCII,
+removing legal forms and noise words, and collapsing punctuation. Supports
+German, French, Italian and English conventions, which covers the four
+languages of Swiss and neighbouring company registers.
+}
+\details{
+Processing order matters and is:
+\enumerate{
+\item Lowercase, trim, and turn \code{&}, \code{/}, \code{+} into spaces.
+\item German digraph expansion (a-umlaut to \code{ae}, eszett to \code{ss}, ...) when
+\code{"de"} is among \code{lang}. This runs \emph{before} transliteration, which would
+otherwise reduce u-umlaut to \code{u} rather than \code{ue}.
+\item Transliteration of remaining accents to ASCII, so that accented legal
+forms (\code{Societe}, \code{Sarl}, \code{Societa} as actually written) are recognised.
+\item Apostrophes are deleted rather than split on, so Romance elisions and
+English possessives join up: \verb{L'Oreal} and \code{Loreal} both give \code{loreal},
+and \verb{McDonald's} gives \code{mcdonalds}.
+\item Dotted acronyms are joined: \code{S.A.R.L.} becomes \code{sarl}, so it is removed
+as a legal form rather than left behind as four stray letters.
+\item Legal forms and noise words are removed, then punctuation and repeated
+whitespace are collapsed.
+}
+
+Country names are deliberately \strong{not} removed. They identify a firm as often
+as they pad it: stripping them turns \verb{Credit Suisse} into \code{credit} and
+\verb{Air France} into \code{air}, which can then exact-match an unrelated company.
+Because a spurious exact match is trusted and never reaches the fuzzy stages
+or the LLM validator, the safer default is to keep them. Structural branch
+markers (\code{Niederlassung}, \code{Succursale}, \code{Filiale}) \emph{are} removed. Pass
+\code{extra_stopwords = c("deutschland", "schweiz")} to strip geography anyway.
+
+Normalization is deliberately lossy, so distinct firms can end up sharing a
+normalized name. \code{\link[=match_companies]{match_companies()}} handles that by grouping rather than
+failing; see \code{\link[=dict_crosswalk]{dict_crosswalk()}}. Names consisting only of stop words
+normalize to \code{""}.
+
+Use \code{\link[=company_name_stopwords]{company_name_stopwords()}} to inspect exactly which tokens are removed.
 }
 \examples{
-# Normalize a single company name
+# German
 normalize_company_name("BMW AG")
 normalize_company_name("Siemens GmbH & Co. KG")
+normalize_company_name("Gebr. Mueller Grosshandel AG")
 
-# Normalize multiple names
-companies <- c("Deutsche Bank AG", "VW Group", "BASF SE")
-normalize_company_name(companies)
+# French, including an accented legal form and an elision
+normalize_company_name("Societe Generale S.A.")
+normalize_company_name("L'Oreal France S.A.")
+
+# Italian
+normalize_company_name("Ditta Rossi S.p.A.")
+
+# English
+normalize_company_name("The Boring Company LLC")
+
+# Restrict to one language to strip less
+normalize_company_name("Sa Casa di Roma", lang = "de")
+normalize_company_name("Sa Casa di Roma", lang = c("fr", "it"))
+
+# Country names are kept by default, because they are often identifying
+normalize_company_name("Credit Suisse AG")
+# ... strip them explicitly if your data needs it
+normalize_company_name("Toyota Deutschland GmbH", extra_stopwords = "deutschland")
+}
+\seealso{
+\code{\link[=company_name_stopwords]{company_name_stopwords()}}, \code{\link[=match_companies]{match_companies()}}
 }

@@ -4,3 +4,6 @@
 ^test data$
 ^CRAN-SUBMISSION$
 ^cran-comments\.md$
+^\.claude$
+^\.github$
+^check_out$

@@ -3,7 +3,6 @@ devtools::install()   # Installs the package to your computer
 
 library(firmmatchr)
 library(data.table)
-library(dplyr)
 
 Sys.setenv(
   AZURE_ENDPOINT   = "your-endpoint",
@@ -13,10 +12,12 @@ Sys.setenv(
 )
 
 # Load your data
-queries <- fread("test data/my_dirty_data.csv")
-dictionary   <- fread("test data/dictionary.csv")
+queries    <- fread("test data/my_dirty_data.csv")
+dictionary <- fread("test data/dictionary.csv")
 
-# Pre-process dictionary (Essential: The package will error if the dictionary has duplicates!)
+# No pre-cleaning of the dictionary is required. Entries that collapse onto the
+# same normalized name are grouped automatically and remain recoverable via
+# dict_crosswalk() / expand_matches().
 
 # 1. Run matching script
 matches <- match_companies(
@@ -30,26 +31,21 @@ matches <- match_companies(
   threshold_zoomer = 0.6
 )
 
-# 2. Join the official names back
-# The LLM needs to see "MyQueryName" vs "Orbis Official Name"
-matches[, query_id := as.numeric(query_id)]
-matches[, dict_id := as.numeric(dict_id)]
-
-matches_full <- matches %>%
-  left_join(dictionary, by = c("dict_id" = "orbis_id")) %>%
-  rename(company_name_dict = company_name)  %>%
-  left_join(queries, by = c("query_id" = "id")) %>%
-  rename(company_name_orig = company_name)
+# 2. Inspect ambiguous matches (several dictionary entries share one name)
+matches[n_dict_ids > 1]
+expand_matches(matches)          # one row per original dictionary entry
+dict_crosswalk(matches)          # full dictionary mapping
 
 # 3. Run Validation
+# The result already carries both names, so no joining back is needed.
 # It automatically picks up keys from .Renviron
 checked_data <- validate_matches_llm(
-  data = matches_full,
-  query_name_col = "company_name_orig",
-  dict_name_col = "company_name_dict",
+  data = matches,
+  query_name_col = "query_name",
+  dict_name_col = "dict_name",
   output_dir = "llm",
   batch_size = 50
 )
 
 # 4. Save
-write.csv(checked_data, "test data/final_validated_matches.csv")
+write.csv(checked_data, "test data/final_validated_matches.csv", row.names = FALSE)

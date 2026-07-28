@@ -17,7 +17,9 @@ engine_exact <- function(queries, dictionary) {
     all = FALSE
   )
 
-  if (nrow(matches) > 0) matches[, match_type := "Perfect"]
+  if (nrow(matches) == 0) return(.fm_empty_matches())
+
+  matches[, match_type := "Perfect"]
 
   unique(matches[, list(query_id, dict_id, match_type)])
 }
@@ -27,11 +29,9 @@ engine_exact <- function(queries, dictionary) {
 # ==============================================================================
 engine_fuzzy_zoomer <- function(queries, dictionary, threshold_zoomer = 0.4, threshold_jw = 0.8) {
 
-  queries[, block := substr(name_clean, 1, 1)]
-  dictionary[, block := substr(name_clean, 1, 1)]
-
-  q_df <- as.data.frame(queries[, list(query_id, name_clean, block)])
-  d_df <- as.data.frame(dictionary[, list(dict_id, name_clean, block)])
+  # Build the blocking key locally: never modify the caller's tables by reference.
+  q_df <- as.data.frame(queries[, list(query_id, name_clean, block = substr(name_clean, 1, 1))])
+  d_df <- as.data.frame(dictionary[, list(dict_id, name_clean, block = substr(name_clean, 1, 1))])
 
   res <- suppressMessages(
     zoomerjoin::jaccard_inner_join(
@@ -46,10 +46,12 @@ engine_fuzzy_zoomer <- function(queries, dictionary, threshold_zoomer = 0.4, thr
 
   setDT(res)
 
-  if (nrow(res) == 0) return(data.table(query_id = character(), dict_id = character(), match_type = character()))
+  if (nrow(res) == 0) return(.fm_empty_matches())
 
   res[, jw_sim := stringdist::stringsim(name_clean.x, name_clean.y, method = "jw")]
   res <- res[jw_sim >= threshold_jw]
+
+  if (nrow(res) == 0) return(.fm_empty_matches())
 
   setorder(res, query_id, -jw_sim)
   best <- res[, .SD[1], by = query_id]
@@ -75,8 +77,12 @@ engine_fts <- function(queries, dictionary, threshold_jw = 0.8) {
     paste0(parts, "*", collapse = " OR ")
   }
 
-  queries[, fts_q := sapply(name_clean, make_query)]
-  queries_to_run <- queries[!is.na(fts_q)]
+  # Local copy: never modify the caller's table by reference.
+  queries_to_run <- queries[, list(query_id, name_clean)]
+  queries_to_run[, fts_q := vapply(name_clean, make_query, character(1), USE.NAMES = FALSE)]
+  queries_to_run <- queries_to_run[!is.na(fts_q)]
+
+  if (nrow(queries_to_run) == 0) return(.fm_empty_matches())
 
   results <- list()
 
@@ -107,6 +113,8 @@ engine_fts <- function(queries, dictionary, threshold_jw = 0.8) {
       }
     }
   }
+
+  if (length(results) == 0) return(.fm_empty_matches())
 
   rbindlist(results)
 }
@@ -162,7 +170,7 @@ engine_rarity <- function(queries, dictionary, threshold_rarity = 1.0) {
   # Filter
   scores <- scores[score >= threshold_rarity]
 
-  if (nrow(scores) == 0) return(data.table(query_id = character(), dict_id = character(), match_type = character()))
+  if (nrow(scores) == 0) return(.fm_empty_matches())
 
   setorder(scores, query_id, -score)
   best <- scores[, .SD[1], by = query_id]
