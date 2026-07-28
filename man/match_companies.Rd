@@ -104,6 +104,9 @@ warning, since an empty string would otherwise match every other empty string.
 }
 
 \examples{
+# Wrapped in \donttest{} because the pipeline calls the multi-threaded Rust
+# internals of 'zoomerjoin'.
+\donttest{
 # Create sample query data
 queries <- data.frame(
   query_id = 1:3,
@@ -117,8 +120,6 @@ dictionary <- data.frame(
   company_name = c("BMW AG", "Siemens AG", "Siemens GmbH", "Commerzbank AG")
 )
 
-# Match companies (uses multi-threaded Rust internals via zoomerjoin)
-\donttest{
 results <- match_companies(
   queries = queries,
   dictionary = dictionary,

@@ -15,6 +15,9 @@
 #' @seealso [expand_matches()]
 #' @export
 #' @examples
+#' # Wrapped in \donttest{} because the pipeline calls the multi-threaded Rust
+#' # internals of 'zoomerjoin'.
+#' \donttest{
 #' queries <- data.frame(
 #'   query_id = 1:2,
 #'   company_name = c("Meier", "BMW")
@@ -24,7 +27,6 @@
 #'   company_name = c("Meier GmbH", "Meier AG", "BMW AG")
 #' )
 #'
-#' \donttest{
 #' results <- match_companies(queries, dictionary)
 #'
 #' # Both Meier rows survive in the crosswalk, even though only D001 is
@@ -59,6 +61,9 @@ dict_crosswalk <- function(x) {
 #' @seealso [dict_crosswalk()]
 #' @export
 #' @examples
+#' # Wrapped in \donttest{} because the pipeline calls the multi-threaded Rust
+#' # internals of 'zoomerjoin'.
+#' \donttest{
 #' queries <- data.frame(
 #'   query_id = 1:2,
 #'   company_name = c("Meier", "BMW")
@@ -68,7 +73,6 @@ dict_crosswalk <- function(x) {
 #'   company_name = c("Meier GmbH", "Meier AG", "BMW AG")
 #' )
 #'
-#' \donttest{
 #' results <- match_companies(queries, dictionary)
 #'
 #' # One row for BMW, two rows for the collapsed Meier group.

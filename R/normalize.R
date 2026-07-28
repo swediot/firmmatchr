@@ -134,6 +134,13 @@ company_name_stopwords <- function(lang = c("de", "fr", "it", "en")) {
 #' markers (`Niederlassung`, `Succursale`, `Filiale`) *are* removed. Pass
 #' `extra_stopwords = c("deutschland", "schweiz")` to strip geography anyway.
 #'
+#' The result is **idempotent**: `normalize_company_name()` applied to its own
+#' output is a no-op, so a single pass is always enough. Before 0.2.0 it was
+#' not, because stop words were matched against the still-accented string --
+#' an accented `Sarl` survived the first pass and was only stripped on the
+#' second, once transliteration had run. Code that looped until the output
+#' stabilized can now call this once.
+#'
 #' Normalization is deliberately lossy, so distinct firms can end up sharing a
 #' normalized name. [match_companies()] handles that by grouping rather than
 #' failing; see [dict_crosswalk()]. Names consisting only of stop words

@@ -17,8 +17,14 @@ registers such as the Swiss one require.
   a given set of languages, so the normalizer can be audited.
 * Fixed the processing order: transliteration now runs **before** stop-word
   removal. Accented legal forms such as `Société` and `Sàrl` were previously
-  never recognised, because the patterns were matched against the still-accented
-  string.
+  never recognised on the first pass, because the patterns were matched against
+  the still-accented string.
+* **`normalize_company_name()` is now idempotent** — applying it to its own
+  output is a no-op, so one pass always suffices. This follows from the
+  ordering fix above: previously `Nestlé Sàrl` became `nestle sarl` on the
+  first pass and only lost `sarl` on the second, so callers had to re-normalize
+  in a loop until the result stopped changing. **Such loops can now be replaced
+  by a single call.** A regression test locks the property in.
 * Dotted acronyms are now joined rather than split: `S.A.R.L.` becomes `sarl`
   (and is stripped) instead of four stray letters `s a r l`. Dots after
   multi-letter tokens still act as separators, so `Co. KG` is unaffected.

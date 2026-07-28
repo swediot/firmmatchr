@@ -57,6 +57,13 @@ or the LLM validator, the safer default is to keep them. Structural branch
 markers (\code{Niederlassung}, \code{Succursale}, \code{Filiale}) \emph{are} removed. Pass
 \code{extra_stopwords = c("deutschland", "schweiz")} to strip geography anyway.
 
+The result is \strong{idempotent}: \code{normalize_company_name()} applied to its own
+output is a no-op, so a single pass is always enough. (Before 0.2.0 it was
+not, because stop words were matched against the still-accented string:
+\verb{Nestle Sarl (accented)} became \verb{nestle sarl} on the first pass and only lost \code{sarl} on
+the second. Code that looped until the output stabilized can now call this
+once.)
+
 Normalization is deliberately lossy, so distinct firms can end up sharing a
 normalized name. \code{\link[=match_companies]{match_companies()}} handles that by grouping rather than
 failing; see \code{\link[=dict_crosswalk]{dict_crosswalk()}}. Names consisting only of stop words

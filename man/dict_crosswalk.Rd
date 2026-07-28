@@ -24,6 +24,9 @@ representative row per group and attaches this crosswalk so that every
 original dictionary row can still be recovered.
 }
 \examples{
+# Wrapped in \donttest{} because the pipeline calls the multi-threaded Rust
+# internals of 'zoomerjoin'.
+\donttest{
 queries <- data.frame(
   query_id = 1:2,
   company_name = c("Meier", "BMW")
@@ -33,7 +36,6 @@ dictionary <- data.frame(
   company_name = c("Meier GmbH", "Meier AG", "BMW AG")
 )
 
-\donttest{
 results <- match_companies(queries, dictionary)
 
 # Both Meier rows survive in the crosswalk, even though only D001 is

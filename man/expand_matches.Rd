@@ -25,6 +25,9 @@ function expands the result to one row per (query row, original dictionary
 row) pair, so the original strings behind a collapsed group are visible.
 }
 \examples{
+# Wrapped in \donttest{} because the pipeline calls the multi-threaded Rust
+# internals of 'zoomerjoin'.
+\donttest{
 queries <- data.frame(
   query_id = 1:2,
   company_name = c("Meier", "BMW")
@@ -34,7 +37,6 @@ dictionary <- data.frame(
   company_name = c("Meier GmbH", "Meier AG", "BMW AG")
 )
 
-\donttest{
 results <- match_companies(queries, dictionary)
 
 # One row for BMW, two rows for the collapsed Meier group.

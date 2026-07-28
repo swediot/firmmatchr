@@ -6,8 +6,8 @@ Description: A pipeline for matching messy company name strings against a clean 
     Implements a cascading strategy: Exact -> Fuzzy ('zoomerjoin') -> 'FTS5' ('SQLite') -> Rarity Weighted.
     Name normalization covers German, French, Italian and English legal forms and conventions,
     which suits multilingual registers such as the Swiss one.
-    Normalization is lossy, so several dictionary entries can collapse onto one string; these
-    groups are matched once and a crosswalk back to every original entry is retained.
+    Normalization discards detail, so several dictionary entries can collapse onto one string;
+    these groups are matched once and a crosswalk back to every original entry is retained.
     References: Beniamino Green (2025) <https://github.com/beniaminogreen/zoomerjoin>; <https://www.sqlite.org/fts5.html>.
 License: MIT + file LICENSE
 URL: https://github.com/swediot/firmmatchr

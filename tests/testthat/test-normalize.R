@@ -135,6 +135,41 @@ test_that("edge cases are safe", {
     )
 })
 
+test_that("normalization is idempotent", {
+    # A second pass must be a no-op. In 0.1.x it was not: stop words were
+    # stripped while the string was still accented and only transliterated
+    # afterwards, so "Nestl\u00e9 S\u00e0rl" went to "nestle sarl" on pass 1 and only
+    # lost "sarl" on pass 2. Callers had to loop until the output stabilized.
+    corpus <- c(
+        "Nestl\u00e9 S\u00e0rl", "Soci\u00e9t\u00e9 G\u00e9n\u00e9rale S.A.",
+        "L'Or\u00e9al France S.A.", "\u00c9tablissements Dupont et Cie",
+        "Cr\u00e9dit Agricole S.A.S. Succursale", "Ditta Rossi S.p.A.",
+        "Societ\u00e0 Cooperativa Bianchi S.r.l.", "Banca d'Italia",
+        "Dell'Arte Impresa S.n.c.", "M\u00fcller Handels GmbH & Co. KG",
+        "Gebr. Sch\u00e4fer Gro\u00dfhandel AG", "G.m.b.H. Meier",
+        "Deutsche Bank AG", "Bosch Niederlassung", "The Boring Company LLC",
+        "A.B.C. Trading S.A.", "X.Y. Holding GmbH AG KG",
+        "Stiftung Verein Genossenschaft", "Casa La Roma di Bianchi",
+        "Credit Suisse AG", "Air France KLM"
+    )
+
+    once <- normalize_company_name(corpus)
+    expect_identical(normalize_company_name(once), once)
+
+    # Holds for each language subset too, not just the union.
+    for (l in list("de", "fr", "it", "en", c("fr", "it"))) {
+        o <- normalize_company_name(corpus, lang = l)
+        expect_identical(normalize_company_name(o, lang = l), o)
+    }
+
+    # And with extra stop words layered on.
+    o <- normalize_company_name(corpus, extra_stopwords = c("handels", "trading"))
+    expect_identical(
+        normalize_company_name(o, extra_stopwords = c("handels", "trading")),
+        o
+    )
+})
+
 test_that("company_name_stopwords reports what is stripped", {
     all_sw <- company_name_stopwords()
     expect_true(all(c("lang", "type", "token") %in% names(all_sw)))
